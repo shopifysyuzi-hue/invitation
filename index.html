@@ -4,27 +4,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROZI TEONA ARTYOM BLESSING DAY | 17.07.2026</title>
+
+<title>ROZI • TEONA • ARTYOM | Baptism Day</title>
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* =========================
-   GLOBAL STYLES
-========================= */
+
+/* ====================================
+   RESET
+==================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Poppins',sans-serif;
-    background:#fafafa;
-    color:#333;
+    color:#2c2c2c;
+    background:#ffffff;
     line-height:1.6;
 }
+
+/* ====================================
+   GLOBAL
+==================================== */
 
 .container{
     width:90%;
@@ -33,86 +44,90 @@ body{
 }
 
 section{
-    padding:90px 0;
+    padding:100px 0;
 }
 
-h1,h2,h3{
-    margin-bottom:20px;
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
 }
 
-p{
-    color:#666;
+.section-title h2{
+    font-size:2.5rem;
+    color:#222;
+    margin-bottom:10px;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
+.section-title p{
+    color:#777;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 38px;
+    background:#c8a96b;
+    color:#fff;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 15px 30px rgba(200,169,107,.3);
+}
+
+/* ====================================
+   HERO
+==================================== */
+
 .hero{
     min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    background:linear-gradient(
-        135deg,
-        #fff8f5 0%,
-        #fdf1f4 50%,
-        #f8f7ff 100%
-    );
+
+    background:
+    linear-gradient(
+    135deg,
+    #fffaf2 0%,
+    #fef8f0 40%,
+    #ffffff 100%);
 }
 
 .hero-content{
-    max-width:800px;
+    max-width:850px;
 }
 
 .hero h1{
-    font-size:clamp(2.5rem,6vw,5rem);
-    font-weight:700;
+    font-size:clamp(3rem,8vw,6rem);
     color:#222;
+    font-weight:700;
+    margin-bottom:20px;
 }
 
-.hero span{
-    color:#d9779b;
+.hero .subtitle{
+    font-size:1.4rem;
+    color:#c8a96b;
+    font-weight:600;
+    margin-bottom:20px;
 }
 
 .hero p{
-    margin:25px auto;
     font-size:1.1rem;
-    max-width:600px;
+    color:#666;
+    max-width:650px;
+    margin:0 auto 35px;
 }
 
-.btn{
-    display:inline-block;
-    padding:15px 35px;
-    background:#d9779b;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    transition:0.3s ease;
-    font-weight:600;
-}
+/* ====================================
+   ABOUT
+==================================== */
 
-.btn:hover{
-    background:#c86489;
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(217,119,155,0.25);
-}
-
-/* =========================
-   ABOUT SECTION
-========================= */
 .about{
-    background:white;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.section-title h2{
-    font-size:2.3rem;
-    color:#222;
+    background:#fff;
 }
 
 .about-content{
@@ -122,87 +137,279 @@ p{
 }
 
 .about-content p{
-    font-size:1.05rem;
+    color:#666;
+    font-size:1.1rem;
 }
 
-/* =========================
-   FEATURES SECTION
-========================= */
+/* ====================================
+   DETAILS / FEATURES
+==================================== */
+
 .features{
-    background:#f8f9fc;
+    background:#faf8f4;
 }
 
 .features-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:25px;
 }
 
-.feature-card{
-    background:white;
-    padding:35px;
-    border-radius:20px;
+.card{
+    background:#fff;
+    padding:40px 30px;
+    border-radius:24px;
     text-align:center;
-    transition:0.3s;
-    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    transition:.3s ease;
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
 }
 
-.feature-card:hover{
+.card:hover{
     transform:translateY(-8px);
-    box-shadow:0 15px 30px rgba(0,0,0,0.08);
+    box-shadow:0 20px 35px rgba(0,0,0,.08);
 }
 
-.feature-icon{
+.icon{
     font-size:40px;
     margin-bottom:15px;
 }
 
-.feature-card h3{
+.card h3{
+    margin-bottom:12px;
     color:#222;
 }
 
-/* =========================
-   CONTACT SECTION
-========================= */
+.card p{
+    color:#666;
+}
+
+/* ====================================
+   INVITATION
+==================================== */
+
 .contact{
-    background:white;
-    text-align:center;
+    background:#fff;
 }
 
-.contact-box{
-    max-width:650px;
+.invitation-box{
+    max-width:800px;
     margin:auto;
-    padding:40px;
-    border-radius:25px;
+    text-align:center;
+    padding:60px;
+    border-radius:30px;
     background:linear-gradient(
-        135deg,
-        #fff7fa,
-        #f7f8ff
-    );
+    135deg,
+    #fffdf8,
+    #f9f5ec);
 }
 
-.contact-box p{
+.invitation-box h3{
+    font-size:2rem;
     margin-bottom:20px;
 }
 
-/* =========================
+.invitation-box p{
+    color:#666;
+    margin-bottom:15px;
+}
+
+/* ====================================
    FOOTER
-========================= */
+==================================== */
+
 footer{
     background:#111;
-    color:white;
+    color:#fff;
     text-align:center;
-    padding:25px;
+    padding:30px;
 }
 
 footer p{
-    color:#ddd;
+    opacity:.8;
 }
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+/* ====================================
+   MOBILE
+==================================== */
+
 @media(max-width:768px){
 
-    section
+.hero h1{
+    font-size:3rem;
+}
+
+.section-title h2{
+    font-size:2rem;
+}
+
+section{
+    padding:70px 0;
+}
+
+.invitation-box{
+    padding:35px 25px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ====================================
+     HERO SECTION
+==================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>ROZI • TEONA • ARTYOM</h1>
+
+        <div class="subtitle">
+            Baptism Day
+        </div>
+
+        <p>
+            Join us as we celebrate a beautiful and blessed day
+            filled with faith, love, family and unforgettable memories.
+        </p>
+
+        <a href="#details" class="btn">
+            View Details
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ====================================
+     ABOUT SECTION
+==================================== -->
+
+<section class="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Special Day</h2>
+            <p>A cherished moment we would love to share with you.</p>
+        </div>
+
+        <div class="about-content">
+
+            <p>
+                We warmly invite you to celebrate the Baptism of
+                Rozi, Teona and Artyom.
+            </p>
+
+            <br>
+
+            <p>
+                The day will begin with a sacred baptism ceremony at
+                Saint Hovhannes Mkrtich Church in Abovyan, followed
+                by a joyful celebration with family and friends.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================
+     EVENT DETAILS
+==================================== -->
+
+<section class="features" id="details">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Event Details</h2>
+            <p>Everything you need to know.</p>
+        </div>
+
+        <div class="features-grid">
+
+            <div class="card">
+                <div class="icon">📅</div>
+                <h3>Date</h3>
+                <p>17 July 2026</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">⛪</div>
+                <h3>Baptism Ceremony</h3>
+                <p>Saint Hovhannes Mkrtich Church (Abovyan)</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🕔</div>
+                <h3>Time</h3>
+                <p>17:00</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎉</div>
+                <h3>Reception</h3>
+                <p>Palladium Hall</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================
+     INVITATION SECTION
+==================================== -->
+
+<section class="contact">
+
+    <div class="container">
+
+        <div class="invitation-box">
+
+            <h3>We Look Forward To Celebrating With You</h3>
+
+            <p>
+                Your presence will make this day even more meaningful
+                and memorable.
+            </p>
+
+            <p>
+                Thank you for being part of our family's special moment.
+            </p>
+
+            <br>
+
+            <a href="#" class="btn">
+                17 • 07 • 2026
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ====================================
+     FOOTER
+==================================== -->
+
+<footer>
+
+    <p>
+        ROZI • TEONA • ARTYOM
+        <br>
+        Baptism Day • 17.07.2026
+    </p>
+
+</footer>
+
+</body>
+</html>
 ```
