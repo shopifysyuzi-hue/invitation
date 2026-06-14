@@ -1,352 +1,121 @@
-
 <!DOCTYPE html>
 <html lang="hy">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ | Մկրտության Օր</title>
+<title>Մկրտության Օր</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-/* ====================================
-   RESET
-==================================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
 body{
     font-family:'Poppins',sans-serif;
-    color:#2c2c2c;
-    line-height:1.7;
-    background:#ffffff;
+    background:#fff;
+    color:#222;
 }
 
-/* ====================================
-   GLOBAL
-==================================== */
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-section{
-    padding:100px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.section-title h2{
-    font-size:2.5rem;
-    color:#0d47a1;
-}
-
-.btn{
-    display:inline-block;
-    padding:16px 38px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    color:#fff;
-    border:none;
-    cursor:pointer;
-
-    background:
-    linear-gradient(
-    135deg,
-    #1976d2,
-    #42a5f5
-    );
-
-    box-shadow:
-    0 10px 25px rgba(25,118,210,.35);
-
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-
-    box-shadow:
-    0 20px 40px rgba(25,118,210,.45);
-}
-
-/* ====================================
-   HERO
-==================================== */
-
+/* HERO */
 .hero{
-    min-height:100vh;
-
+    height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-
+    background:linear-gradient(135deg,#0d47a1,#1976d2,#42a5f5);
     color:white;
-
-    background:
-    linear-gradient(
-    135deg,
-    #0d47a1,
-    #1565c0,
-    #42a5f5
-    );
+    position:relative;
+    overflow:hidden;
+    padding:20px;
 }
 
-.hero-content{
-    max-width:850px;
+/* IMAGE COLLAGE */
+.hero-images{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    margin-bottom:25px;
+    flex-wrap:wrap;
 }
 
-.hero-title{
+.hero-images img{
+    width:120px;
+    height:120px;
+    object-fit:cover;
+    border-radius:20px;
+    border:3px solid rgba(255,255,255,0.5);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    transition:0.3s;
+}
 
-    font-size:clamp(3rem,8vw,6rem);
+.hero-images img:hover{
+    transform:scale(1.1);
+}
 
+/* TEXT */
+.hero h1{
+    font-size:clamp(2.5rem,6vw,4.5rem);
     font-weight:700;
-
-    text-shadow:
-    0 2px 0 #dbe8ff,
-    0 4px 0 #c8dcff,
-    0 6px 0 #b6d0ff,
-    0 10px 25px rgba(0,0,0,.25);
-
-    margin-bottom:20px;
-}
-
-.subtitle{
-    font-size:1.5rem;
-    font-weight:600;
-    margin-bottom:15px;
+    text-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
 .hero p{
-    max-width:650px;
-    margin:0 auto 20px;
-}
-
-.date{
+    margin-top:10px;
     font-size:1.2rem;
-    margin-bottom:30px;
+    opacity:0.9;
 }
 
-/* ====================================
-   ABOUT
-==================================== */
-
-.about{
-    background:#ffffff;
+/* SCROLL */
+.scroll-down{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    text-align:center;
+    color:white;
+    animation:bounce 1.5s infinite;
+    text-decoration:none;
 }
 
-.about-content{
-    max-width:850px;
-    margin:auto;
+.scroll-down div{
+    font-size:28px;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translate(-50%,0);}
+    50%{transform:translate(-50%,10px);}
+}
+
+/* SECTION */
+.section{
+    padding:100px 20px;
     text-align:center;
 }
 
-.about-content p{
-    color:#666;
+.title{
+    font-size:2.2rem;
+    color:#0d47a1;
+    margin-bottom:20px;
+}
+
+.info{
+    max-width:800px;
+    margin:auto;
+    color:#555;
     font-size:1.1rem;
-}
-
-/* ====================================
-   DETAILS
-==================================== */
-
-.features{
-    background:#f4f9ff;
-}
-
-.features-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    line-height:1.8;
 }
 
 .card{
-    background:white;
-    padding:40px 30px;
-    border-radius:25px;
-
-    border:1px solid rgba(66,165,245,.15);
-
-    box-shadow:
-    0 10px 30px rgba(66,165,245,.15);
-
-    transition:.4s;
-
-    text-align:center;
-}
-
-.card:hover{
-
-    transform:
-    translateY(-10px)
-    scale(1.03);
-
-    box-shadow:
-    0 20px 50px rgba(66,165,245,.25);
-}
-
-.icon{
-    font-size:40px;
-    margin-bottom:15px;
-}
-
-.card h3{
-    margin-bottom:10px;
-}
-
-/* ====================================
-   INVITATION
-==================================== */
-
-.contact{
-    background:#ffffff;
-}
-
-.invitation-box{
-    max-width:800px;
-    margin:auto;
-    text-align:center;
-
-    padding:60px;
-
-    border-radius:30px;
-
-    background:
-    linear-gradient(
-    135deg,
-    #ffffff,
-    #eef6ff
-    );
-
-    box-shadow:
-    0 15px 40px rgba(66,165,245,.15);
-}
-
-.invitation-box h3{
-    color:#0d47a1;
-    margin-bottom:20px;
-}
-
-/* ====================================
-   RSVP
-==================================== */
-
-.rsvp-section{
-    background:#f5f9ff;
-}
-
-.rsvp-box{
-
-    max-width:750px;
-    margin:auto;
-
-    background:white;
-
-    padding:50px;
-
-    border-radius:30px;
-
-    box-shadow:
-    0 15px 40px rgba(66,165,245,.15);
-}
-
-.rsvp-box h2{
-    text-align:center;
-    color:#0d47a1;
-    margin-bottom:15px;
-}
-
-.rsvp-box p{
-    text-align:center;
-    color:#666;
-    margin-bottom:30px;
-}
-
-.form-group{
-    margin-bottom:20px;
-}
-
-.form-group label{
-    display:block;
-    margin-bottom:8px;
-    font-weight:600;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea{
-
-    width:100%;
-    padding:15px;
-
-    border:1px solid #d6e7ff;
-    border-radius:15px;
-
-    outline:none;
-    font-family:'Poppins',sans-serif;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-
-    border-color:#42a5f5;
-
-    box-shadow:
-    0 0 0 4px rgba(66,165,245,.15);
-}
-
-/* ====================================
-   FOOTER
-==================================== */
-
-footer{
-    background:#0d47a1;
-    color:white;
-    text-align:center;
+    margin-top:40px;
     padding:30px;
-}
-
-/* ====================================
-   MOBILE
-==================================== */
-
-@media(max-width:768px){
-
-.hero-title{
-    font-size:3rem;
-}
-
-.section-title h2{
-    font-size:2rem;
-}
-
-section{
-    padding:70px 0;
-}
-
-.invitation-box,
-.rsvp-box{
-    padding:30px 20px;
-}
-
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 </style>
@@ -355,229 +124,57 @@ section{
 <body>
 
 <!-- HERO -->
-
 <section class="hero">
 
-    <div class="hero-content">
+    <div>
 
-        <h1 class="hero-title">
-            ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ
-        </h1>
+        <!-- KIDS IMAGES -->
+        <div class="hero-images">
 
-        <div class="subtitle">
-            Մկրտության Օր
+            <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/new_tyom_2.jpg?v=1781461221">
+            <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_2040.jpg?v=1781461384">
+            <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_9529_1_1.jpg?v=1781461485">
+
         </div>
 
-        <p>
-            Սիրով հրավիրում ենք Ձեզ մասնակցելու
-            մեր փոքրիկների մկրտության սուրբ արարողությանը։
-        </p>
+        <h1>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ</h1>
 
-        <div class="date">
-            17 Հուլիսի • 2026
-        </div>
-
-        <a href="#details" class="btn">
-            Տեսնել Մանրամասները
-        </a>
+        <p>Մկրտության Օր • 17 Հուլիսի 2026</p>
 
     </div>
 
-</section>
-
-<!-- ABOUT -->
-
-<section class="about">
-
-    <div class="container">
-
-        <div class="section-title">
-            <h2>Մեր Հատուկ Օրը</h2>
-        </div>
-
-        <div class="about-content">
-
-            <p>
-                Մեզ համար մեծ ուրախություն է կիսել
-                այս կարևոր և օրհնված օրը Ձեզ հետ։
-            </p>
-
-            <br>
-
-            <p>
-                Մկրտության արարողությունը տեղի կունենա
-                Սուրբ Հովհաննես Մկրտիչ եկեղեցում (Աբովյան),
-                որից հետո միասին կշարունակենք
-                տոնական երեկոն Palladium Hall-ում։
-            </p>
-
-        </div>
-
-    </div>
+    <!-- SCROLL -->
+    <a href="#details" class="scroll-down">
+        <div>↓</div>
+    </a>
 
 </section>
 
 <!-- DETAILS -->
+<section class="section" id="details">
 
-<section class="features" id="details">
+    <div class="title">Միջոցառման Մանրամասներ</div>
 
-    <div class="container">
+    <div class="info">
 
-        <div class="section-title">
-            <h2>Միջոցառման Մանրամասներ</h2>
-        </div>
+        Սիրով հրավիրում ենք Ձեզ մասնակցելու մեր փոքրիկների մկրտությանը։
 
-        <div class="features-grid">
+        <div class="card">
 
-            <div class="card">
-                <div class="icon">📅</div>
-                <h3>Ամսաթիվ</h3>
-                <p>17 Հուլիսի 2026</p>
-            </div>
-
-            <div class="card">
-                <div class="icon">⛪</div>
-                <h3>Մկրտության Արարողություն</h3>
-                <p>Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)</p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🕔</div>
-                <h3>Ժամ</h3>
-                <p>17:00</p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🎉</div>
-                <h3>Տոնական Ընդունելություն</h3>
-                <p>Palladium Hall</p>
-            </div>
+            ⛪ Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)<br><br>
+            🕔 Ժամը՝ 17:00<br><br>
+            🎉 Palladium Hall<br><br>
+            📅 17 Հուլիսի 2026
 
         </div>
+
+        <p style="margin-top:30px;">
+            Ձեր ներկայությունը մեզ համար մեծ ուրախություն կլինի ❤️
+        </p>
 
     </div>
 
 </section>
-
-<!-- INVITATION -->
-
-<section class="contact">
-
-    <div class="container">
-
-        <div class="invitation-box">
-
-            <h3>Սիրով Սպասում Ենք Ձեզ</h3>
-
-            <p>
-                Ձեր ներկայությունը կդարձնի այս օրը
-                առավել ջերմ, գեղեցիկ և հիշարժան։
-            </p>
-
-            <p>
-                Եկեք միասին կիսենք հավատքի,
-                սիրո և օրհնության այս հրաշալի օրը։
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- RSVP -->
-
-<section class="rsvp-section">
-
-    <div class="container">
-
-        <div class="rsvp-box">
-
-            <h2>
-                Խնդրում ենք հաստատել Ձեր մասնակցությունը
-            </h2>
-
-            <p>
-                Մեզ համար կարևոր է իմանալ՝
-                կմասնակցե՞ք մեր տոնակատարությանը։
-            </p>
-
-            <form>
-
-                <div class="form-group">
-                    <label>
-                        Անուն և Ազգանուն
-                    </label>
-
-                    <input
-                    type="text"
-                    placeholder="Գրեք Ձեր անունը">
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        Մասնակցություն
-                    </label>
-
-                    <select>
-                        <option>
-                            Ընտրեք տարբերակը
-                        </option>
-
-                        <option>
-                            Այո, կմասնակցեմ
-                        </option>
-
-                        <option>
-                            Ցավոք, չեմ կարող մասնակցել
-                        </option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        Քանի՞ հոգով կմասնակցեք
-                    </label>
-
-                    <input
-                    type="number"
-                    placeholder="Օրինակ՝ 2">
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        Մաղթանք կամ մեկնաբանություն
-                    </label>
-
-                    <textarea
-                    rows="4"
-                    placeholder="Ձեր խոսքը..."></textarea>
-                </div>
-
-                <button class="btn" type="submit">
-                    Հաստատել Մասնակցությունը
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-    <p>
-        ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ
-        <br>
-        Մկրտության Օր • 17.07.2026
-    </p>
-
-</footer>
 
 </body>
 </html>
-```
