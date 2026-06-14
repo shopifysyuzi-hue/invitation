@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Reel Invitation</title>
+<title>Մկրտության Հրավեր</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,151 +16,179 @@
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
+html{scroll-behavior:smooth;}
+
 body{
     font-family:'Poppins',sans-serif;
+    color:#2b2320;
+    background:#f7f1ea;
     overflow-x:hidden;
-    background:#000;
 }
 
 /* =========================
-   REEL HERO (VIDEO FEEL)
+   FIXED MULTI BACKGROUND (WORKING)
 ========================= */
 
-.hero{
-    height:100vh;
-    position:relative;
+.bg-layer{
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    overflow:hidden;
+}
+
+.bg-layer div{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    filter:blur(5px) brightness(1.2);
+    opacity:0.18;
+}
+
+/* images */
+.bg1{background-image:url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/new_tyom_2.jpg?v=1781461221");}
+.bg2{background-image:url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_2040.jpg?v=1781461384");}
+.bg3{background-image:url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_9529_1_1.jpg?v=1781461485");}
+
+/* soft overlay */
+.overlay{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background:radial-gradient(circle at center,
+        rgba(255,255,255,0.7),
+        rgba(247,241,234,0.95));
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    overflow:hidden;
-    color:white;
-}
-
-/* KIDS IMAGES AS MOVING LAYERS */
-
-.hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:
-        url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/new_tyom_2.jpg?v=1781461221");
-
-    background-size:cover;
-    background-position:center;
-
-    animation:zoomSlow 20s infinite alternate ease-in-out;
-    filter:brightness(0.6);
-    z-index:0;
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:
-        url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_2040.jpg?v=1781461384"),
-        url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_9529_1_1.jpg?v=1781461485");
-
-    background-size:cover;
-    background-position:center;
-
-    opacity:0.25;
-    filter:blur(1px);
-    animation:floatMove 15s infinite alternate ease-in-out;
-    z-index:1;
-}
-
-/* soft cinematic overlay */
-.overlay{
-    position:absolute;
-    inset:0;
-    background:radial-gradient(circle at center,
-        rgba(0,0,0,0.2),
-        rgba(0,0,0,0.85));
-    z-index:2;
+    padding:70px 20px;
 }
 
 /* =========================
-   TEXT (REEL STYLE)
+   INTRO
 ========================= */
 
-.content{
-    position:relative;
-    z-index:3;
-    animation:fadeUp 2s ease forwards;
-}
-
-h1{
-    font-size:clamp(2rem,5vw,4rem);
-    letter-spacing:2px;
+.intro h1{
+    font-size:clamp(2rem,5vw,3.5rem);
     font-weight:600;
 }
 
-p{
-    margin-top:10px;
-    color:rgba(255,255,255,0.8);
+.intro p{
+    margin-top:20px;
+    max-width:750px;
+    color:#5a4a42;
+    line-height:1.7;
 }
 
-/* CTA */
 .btn{
-    margin-top:30px;
+    margin-top:35px;
     display:inline-block;
     padding:15px 40px;
     border-radius:50px;
-    background:linear-gradient(135deg,#b08a6a,#e2c4a8);
-    color:#000;
+    background:#b08a6a;
+    color:white;
     font-weight:600;
     text-decoration:none;
     transition:0.3s;
 }
 
-.btn:hover{
-    transform:scale(1.05);
+.btn:hover{transform:scale(1.05);}
+
+/* =========================
+   DATE + COUNTDOWN
+========================= */
+
+.date{
+    font-size:5rem;
+    font-weight:800;
+    color:#b08a6a;
+}
+
+.subtitle{
+    margin-top:10px;
+    color:#6b5b52;
+}
+
+.countdown{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    margin-top:25px;
+    flex-wrap:wrap;
+}
+
+.box{
+    min-width:75px;
+    padding:12px;
+    border-radius:15px;
+    background:white;
+    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+.box span{
+    font-size:1.8rem;
+    font-weight:700;
+    display:block;
 }
 
 /* =========================
-   ANIMATIONS (REEL FEEL)
+   CARDS
 ========================= */
 
-/* slow zoom like video camera */
-@keyframes zoomSlow{
-    from{transform:scale(1);}
-    to{transform:scale(1.2);}
+.card{
+    width:360px;
+    padding:30px;
+    border-radius:22px;
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
 }
 
-/* floating movement */
-@keyframes floatMove{
-    from{transform:translateX(-10px) scale(1.05);}
-    to{transform:translateX(10px) scale(1.1);}
-}
-
-/* text fade up */
-@keyframes fadeUp{
-    from{opacity:0; transform:translateY(30px); filter:blur(5px);}
-    to{opacity:1; transform:translateY(0); filter:blur(0);}
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:15px;
+    margin-bottom:15px;
 }
 
 /* =========================
-   SCROLL INDICATOR
+   RSVP
 ========================= */
 
-.scroll{
-    position:absolute;
-    bottom:30px;
-    left:50%;
-    transform:translateX(-50%);
-    z-index:3;
-    color:white;
-    opacity:0.7;
-    animation:bounce 2s infinite;
+.buttons{
+    margin-top:25px;
+    display:flex;
+    gap:15px;
+    justify-content:center;
 }
 
-@keyframes bounce{
-    0%,100%{transform:translate(-50%,0);}
-    50%{transform:translate(-50%,10px);}
+button{
+    padding:14px 30px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.yes{background:#b08a6a;color:white;}
+.no{background:#e6ddd4;color:#3b2f2a;}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border-radius:10px;
+    border:1px solid #ddd;
 }
 
 </style>
@@ -168,23 +196,142 @@ p{
 
 <body>
 
-<section class="hero">
+<!-- BACKGROUND -->
+<div class="bg-layer">
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <div class="bg3"></div>
+</div>
 
-    <div class="overlay"></div>
+<div class="overlay"></div>
 
-    <div class="content">
+<!-- INTRO -->
+<section class="intro">
 
-        <h1>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ</h1>
+    <div>
 
-        <p>Սուրբ Մկրտության Հրավեր</p>
+        <h1>Դուք հրավիրված եք</h1>
 
-        <a class="btn" href="#details">Դիտել Մանրամասները</a>
+        <p>
+            Ռոզի • Տեոնա • Արտյոմի Սուրբ Մկրտություն<br><br>
+            Կիսեք մեզ հետ մեր կյանքի ամենակարևոր օրը
+        </p>
+
+        <a class="btn" href="#date">Բացել հրավերը</a>
 
     </div>
 
-    <div class="scroll">⬇</div>
+</section>
+
+<!-- DATE -->
+<section id="date">
+
+    <div>
+
+        <div class="date">17 ՀՈՒԼԻՍ</div>
+        <div class="subtitle">2026</div>
+
+        <div class="countdown">
+
+            <div class="box"><span id="d"></span><small>Օր</small></div>
+            <div class="box"><span id="h"></span><small>Ժամ</small></div>
+            <div class="box"><span id="m"></span><small>Րոպե</small></div>
+            <div class="box"><span id="s"></span><small>Վայրկյան</small></div>
+
+        </div>
+
+    </div>
 
 </section>
+
+<!-- CHURCH -->
+<section>
+
+    <div class="card">
+
+        <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/Saint-Hovhannes-Chirch-in-Abovyan.jpg?v=1781464704">
+
+        <h3>Եկեղեցի</h3>
+        <p>Սուրբ Հովհաննես Մկրտիչ</p>
+        <p><b>15:00</b></p>
+
+    </div>
+
+</section>
+
+<!-- HALL -->
+<section>
+
+    <div class="card">
+
+        <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/palladium.jpg?v=1781464764">
+
+        <h3>Ռեստորան</h3>
+        <p>Palladium Hall</p>
+        <p><b>17:00</b></p>
+
+    </div>
+
+</section>
+
+<!-- RSVP -->
+<section>
+
+    <div class="card">
+
+        <h3>Մասնակցություն</h3>
+
+        <input id="name" placeholder="Ձեր անունը">
+
+        <div class="buttons">
+
+            <button class="yes" onclick="reply('Կգամ')">Կգամ</button>
+            <button class="no" onclick="reply('Չեմ կարող')">Չեմ կարող</button>
+
+        </div>
+
+        <p id="result" style="margin-top:15px;color:#6b5b52;"></p>
+
+    </div>
+
+</section>
+
+<script>
+
+/* COUNTDOWN */
+const target = new Date("July 17, 2026 15:00:00").getTime();
+
+function update(){
+
+    let now = new Date().getTime();
+    let diff = target - now;
+
+    document.getElementById("d").innerText = Math.floor(diff/(1000*60*60*24));
+    document.getElementById("h").innerText = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+    document.getElementById("m").innerText = Math.floor((diff%(1000*60*60))/(1000*60));
+    document.getElementById("s").innerText = Math.floor((diff%(1000*60))/1000);
+
+}
+
+setInterval(update,1000);
+update();
+
+/* RSVP */
+function reply(answer){
+
+    let name = document.getElementById("name").value;
+
+    if(name === ""){
+        alert("Խնդրում ենք գրել անունը");
+        return;
+    }
+
+    document.getElementById("result").innerText =
+        name + " → " + answer;
+
+}
+
+</script>
 
 </body>
 </html>
