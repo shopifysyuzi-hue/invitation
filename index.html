@@ -18,12 +18,13 @@
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#fbf7f2;
-    color:#2c2c2c;
+    background:#fbf6ef;
+    color:#2b2320;
+    overflow-x:hidden;
 }
 
 /* =========================
-   HERO (BACKGROUND IMAGES)
+   HERO (3D IMAGE LAYERS)
 ========================= */
 
 .hero{
@@ -36,82 +37,125 @@ body{
     overflow:hidden;
 }
 
-/* kids images as background */
-.hero::before{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:
-    linear-gradient(rgba(255,245,235,0.65),rgba(255,245,235,0.85)),
-    url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/new_tyom_2.jpg?v=1781461221"),
-    url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_2040.jpg?v=1781461384"),
-    url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_9529_1_1.jpg?v=1781461485");
-    background-size:cover;
-    background-position:center;
-    filter:blur(0px);
-    z-index:0;
-}
+/* LAYERED 3 KIDS IMAGES = 3D FEEL */
 
-/* soft overlay */
+.hero::before,
 .hero::after{
     content:"";
     position:absolute;
     width:100%;
     height:100%;
-    background:radial-gradient(circle, rgba(255,255,255,0.2), rgba(245,235,225,0.85));
-    z-index:1;
+    background-size:cover;
+    background-position:center;
+    filter:brightness(0.9);
 }
 
-/* content */
+.hero::before{
+    background-image:url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/new_tyom_2.jpg?v=1781461221");
+    transform:scale(1.1);
+    z-index:0;
+    opacity:0.45;
+}
+
+.hero::after{
+    background-image:url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_2040.jpg?v=1781461384"),
+                     url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_9529_1_1.jpg?v=1781461485");
+    background-blend-mode:screen;
+    z-index:1;
+    opacity:0.35;
+}
+
+/* soft cinematic overlay */
+.overlay{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:radial-gradient(circle at center,
+        rgba(255,255,255,0.15),
+        rgba(245,235,225,0.9));
+    z-index:2;
+}
+
+/* =========================
+   HERO CONTENT
+========================= */
+
 .hero-content{
     position:relative;
-    z-index:2;
+    z-index:3;
     max-width:900px;
     padding:20px;
 }
 
-/* title */
-.hero h1{
+.hero-title{
     font-size:clamp(2.5rem,6vw,4.5rem);
     font-weight:700;
-    color:#3b2f2a;
+    color:#2f2622;
+    letter-spacing:1px;
 }
 
-.hero p{
+.hero-sub{
     margin-top:10px;
     font-size:1.2rem;
-    color:#5a4a42;
+    color:#6b5a50;
+}
+
+/* CTA BUTTON */
+
+.cta{
+    margin-top:30px;
+}
+
+.cta button{
+    padding:16px 40px;
+    border:none;
+    border-radius:60px;
+    background:linear-gradient(135deg,#b08a6a,#d6b89a);
+    color:white;
+    font-weight:600;
+    font-size:1rem;
+    cursor:pointer;
+    box-shadow:0 20px 40px rgba(0,0,0,0.15);
+    transition:0.3s;
+}
+
+.cta button:hover{
+    transform:translateY(-5px) scale(1.03);
 }
 
 /* =========================
-   COUNTDOWN
+   COUNTDOWN (REAL LOOK)
 ========================= */
 
 .countdown{
-    margin-top:25px;
     display:flex;
-    gap:15px;
     justify-content:center;
+    gap:15px;
+    margin-top:35px;
     flex-wrap:wrap;
 }
 
-.box{
+.time-box{
+    width:110px;
+    height:110px;
     background:rgba(255,255,255,0.7);
-    padding:15px 20px;
-    border-radius:15px;
-    min-width:80px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 15px 30px rgba(0,0,0,0.08);
+    transform:perspective(600px) rotateX(8deg);
 }
 
-.box span{
-    font-size:1.4rem;
-    font-weight:600;
-    display:block;
+.time-box span{
+    font-size:1.8rem;
+    font-weight:700;
 }
 
 /* =========================
-   SECTION
+   DETAILS SECTION
 ========================= */
 
 .section{
@@ -120,76 +164,79 @@ body{
 }
 
 .title{
-    font-size:2rem;
-    color:#3b2f2a;
+    font-size:2.2rem;
+    color:#2f2622;
     margin-bottom:20px;
 }
 
 .text{
-    max-width:750px;
+    max-width:800px;
     margin:auto;
-    color:#6b5b52;
+    color:#6b5a50;
     line-height:1.8;
-    font-size:1.1rem;
 }
 
 /* =========================
-   INVITATION WORDS
+   3D ICON CARDS (NO SMILEY STYLE)
 ========================= */
 
-.quote{
+.cards{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
     margin-top:40px;
-    font-style:italic;
-    font-size:1.2rem;
-    color:#7a665b;
+}
+
+.card{
+    width:260px;
+    padding:25px;
+    border-radius:25px;
+    background:linear-gradient(145deg,#ffffff,#f3e9df);
+    box-shadow:
+        10px 10px 25px rgba(0,0,0,0.08),
+        -5px -5px 20px rgba(255,255,255,0.8);
+    transform:perspective(600px) rotateY(5deg);
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:perspective(600px) rotateY(0deg) translateY(-8px);
+}
+
+.icon3d{
+    width:60px;
+    height:60px;
+    margin:auto;
+    margin-bottom:15px;
+    background:linear-gradient(135deg,#b08a6a,#e2c9b2);
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
 }
 
 /* =========================
-   RSVP
+   RSVP CTA
 ========================= */
 
 .rsvp{
     background:#fff;
-    padding:70px 20px;
+    padding:80px 20px;
     text-align:center;
 }
 
-.rsvp-box{
-    max-width:650px;
-    margin:auto;
-    background:#fff7f0;
-    padding:40px;
-    border-radius:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.08);
-}
-
-.buttons{
-    display:flex;
-    gap:15px;
-    justify-content:center;
-    margin-top:20px;
-}
-
-.btn{
-    padding:12px 25px;
-    border-radius:50px;
+.rsvp button{
+    padding:18px 50px;
     border:none;
-    cursor:pointer;
+    border-radius:60px;
+    background:linear-gradient(135deg,#2f2622,#6b5a50);
+    color:white;
     font-weight:600;
+    cursor:pointer;
+    font-size:1rem;
     transition:0.3s;
 }
 
-.yes{
-    background:#b08a6a;
-    color:white;
-}
-
-.no{
-    background:#e9ddd3;
-    color:#4a3a32;
-}
-
-.btn:hover{
+.rsvp button:hover{
     transform:scale(1.05);
 }
 
@@ -201,28 +248,35 @@ body{
 <!-- HERO -->
 <section class="hero">
 
+    <div class="overlay"></div>
+
     <div class="hero-content">
 
-        <h1>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ</h1>
+        <h1 class="hero-title">ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ</h1>
 
-        <p>Մկրտության Օր • 17 Հուլիսի 2026</p>
+        <div class="hero-sub">Մկրտության Օր • 17 Հուլիսի 2026</div>
 
-        <!-- COUNTDOWN -->
+        <!-- CTA -->
+        <div class="cta">
+            <button>Դիտել Մանրամասները ↓</button>
+        </div>
+
+        <!-- COUNTDOWN STYLE -->
         <div class="countdown">
 
-            <div class="box">
-                <span>⛪ 15:00</span>
+            <div class="time-box">
+                <span>15:00</span>
                 Եկեղեցի
             </div>
 
-            <div class="box">
-                <span>🎉 17:00</span>
-                Հանդիսություն
+            <div class="time-box">
+                <span>17:00</span>
+                Ռեստորան
             </div>
 
-            <div class="box">
-                <span>📅</span>
-                17/07/2026
+            <div class="time-box">
+                <span>17/07</span>
+                Օր
             </div>
 
         </div>
@@ -231,19 +285,35 @@ body{
 
 </section>
 
-<!-- ABOUT -->
+<!-- DETAILS -->
 <section class="section">
 
-    <div class="title">Մեր Օրը</div>
+    <div class="title">Միջոցառման Մանրամասներ</div>
 
     <div class="text">
+        Սիրով հրավիրում ենք Ձեզ մասնակցելու մեր փոքրիկների մկրտության օրվան,
+        որը կսկսվի եկեղեցում և կշարունակվի տոնական ընթրիքով։
+    </div>
 
-        Սիրով հրավիրում ենք Ձեզ մեր փոքրիկների մկրտությանը։
-        Օրը սկսվելու է սուրբ արարողությամբ եկեղեցում,
-        այնուհետև կշարունակվի գեղեցիկ և ջերմ տոնական երեկոյով։
+    <!-- 3D ICON CARDS -->
+    <div class="cards">
 
-        <div class="quote">
-            “Թող այս օրը լինի օրհնության, սիրո և խաղաղության սկիզբ”
+        <div class="card">
+            <div class="icon3d"></div>
+            <h3>⛪ Եկեղեցի</h3>
+            <p>Սուրբ Հովհաննես Մկրտիչ (15:00)</p>
+        </div>
+
+        <div class="card">
+            <div class="icon3d"></div>
+            <h3>🎉 Ռեստորան</h3>
+            <p>Palladium Hall (17:00)</p>
+        </div>
+
+        <div class="card">
+            <div class="icon3d"></div>
+            <h3>📅 Օր</h3>
+            <p>17 Հուլիսի 2026</p>
         </div>
 
     </div>
@@ -253,20 +323,13 @@ body{
 <!-- RSVP -->
 <section class="rsvp">
 
-    <div class="rsvp-box">
+    <h2>Կսպասենք Ձեզ սիրով</h2>
 
-        <h2>Կմասնակցե՞ք մեր միջոցառմանը</h2>
+    <p style="margin-top:10px;color:#6b5a50;">
+        Խնդրում ենք հաստատել Ձեր մասնակցությունը
+    </p>
 
-        <p>Խնդրում ենք նշել Ձեր մասնակցությունը</p>
-
-        <div class="buttons">
-
-            <button class="btn yes">Այո, կգամ</button>
-            <button class="btn no">Ցավոք, չեմ կարող</button>
-
-        </div>
-
-    </div>
+    <button>Հաստատել Մասնակցությունը</button>
 
 </section>
 
