@@ -10,72 +10,60 @@
 
 <style>
 
-/* RESET */
+/* =========================
+   GLOBAL
+========================= */
+
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
 
 body{
     font-family:'Poppins',sans-serif;
-    background:#fff;
-    color:#222;
-    overflow-x:hidden;
+    background:#fbf7f2;
+    color:#2c2c2c;
 }
 
-/* HERO */
+/* =========================
+   HERO (BACKGROUND IMAGES)
+========================= */
+
 .hero{
     height:100vh;
+    position:relative;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    position:relative;
-    color:white;
-    background:linear-gradient(135deg,#0b2a6f,#1565c0,#42a5f5);
     overflow:hidden;
 }
 
-/* GLOWING CROSS */
+/* kids images as background */
 .hero::before{
-    content:"✝";
-    position:absolute;
-    font-size:400px;
-    color:rgba(255,255,255,0.08);
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-shadow:
-        0 0 30px rgba(255,255,255,0.6),
-        0 0 80px rgba(173,216,255,0.5),
-        0 0 140px rgba(100,180,255,0.4);
-    animation:glow 4s ease-in-out infinite alternate;
-}
-
-@keyframes glow{
-    from{opacity:0.4; transform:translate(-50%,-50%) scale(1);}
-    to{opacity:0.9; transform:translate(-50%,-50%) scale(1.05);}
-}
-
-/* CLOUDS */
-.clouds{
+    content:"";
     position:absolute;
     width:100%;
     height:100%;
+    background:
+    linear-gradient(rgba(255,245,235,0.65),rgba(255,245,235,0.85)),
+    url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/new_tyom_2.jpg?v=1781461221"),
+    url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_2040.jpg?v=1781461384"),
+    url("https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_9529_1_1.jpg?v=1781461485");
+    background-size:cover;
+    background-position:center;
+    filter:blur(0px);
+    z-index:0;
 }
 
-.cloud{
+/* soft overlay */
+.hero::after{
+    content:"";
     position:absolute;
-    background:rgba(255,255,255,0.22);
-    border-radius:100px;
-    filter:blur(1px);
-    animation:float linear infinite;
+    width:100%;
+    height:100%;
+    background:radial-gradient(circle, rgba(255,255,255,0.2), rgba(245,235,225,0.85));
+    z-index:1;
 }
 
-@keyframes float{
-    0%{transform:translateX(-200px);}
-    100%{transform:translateX(120vw);}
-}
-
-/* HERO CONTENT */
+/* content */
 .hero-content{
     position:relative;
     z-index:2;
@@ -83,67 +71,126 @@ body{
     padding:20px;
 }
 
-/* IMAGES */
-.hero-images{
-    display:flex;
-    gap:15px;
-    justify-content:center;
-    flex-wrap:wrap;
-    margin-bottom:25px;
-}
-
-.hero-images img{
-    width:120px;
-    height:120px;
-    object-fit:cover;
-    border-radius:20px;
-    border:3px solid rgba(255,255,255,0.6);
-    box-shadow:0 10px 30px rgba(0,0,0,0.25);
-    transition:0.3s;
-}
-
-.hero-images img:hover{
-    transform:scale(1.1);
-}
-
-/* TEXT */
+/* title */
 .hero h1{
     font-size:clamp(2.5rem,6vw,4.5rem);
     font-weight:700;
-    text-shadow:0 10px 30px rgba(0,0,0,0.3);
+    color:#3b2f2a;
 }
 
 .hero p{
     margin-top:10px;
     font-size:1.2rem;
-    opacity:0.9;
+    color:#5a4a42;
 }
 
-/* DETAILS */
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown{
+    margin-top:25px;
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.box{
+    background:rgba(255,255,255,0.7);
+    padding:15px 20px;
+    border-radius:15px;
+    min-width:80px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.box span{
+    font-size:1.4rem;
+    font-weight:600;
+    display:block;
+}
+
+/* =========================
+   SECTION
+========================= */
+
 .section{
-    padding:100px 20px;
+    padding:90px 20px;
     text-align:center;
 }
 
 .title{
-    font-size:2.2rem;
-    color:#0d47a1;
+    font-size:2rem;
+    color:#3b2f2a;
     margin-bottom:20px;
 }
 
-.info{
-    max-width:800px;
+.text{
+    max-width:750px;
     margin:auto;
-    color:#555;
-    font-size:1.1rem;
+    color:#6b5b52;
     line-height:1.8;
+    font-size:1.1rem;
 }
 
-.card{
+/* =========================
+   INVITATION WORDS
+========================= */
+
+.quote{
     margin-top:40px;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    font-style:italic;
+    font-size:1.2rem;
+    color:#7a665b;
+}
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp{
+    background:#fff;
+    padding:70px 20px;
+    text-align:center;
+}
+
+.rsvp-box{
+    max-width:650px;
+    margin:auto;
+    background:#fff7f0;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.btn{
+    padding:12px 25px;
+    border-radius:50px;
+    border:none;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.yes{
+    background:#b08a6a;
+    color:white;
+}
+
+.no{
+    background:#e9ddd3;
+    color:#4a3a32;
+}
+
+.btn:hover{
+    transform:scale(1.05);
 }
 
 </style>
@@ -154,54 +201,70 @@ body{
 <!-- HERO -->
 <section class="hero">
 
-    <!-- CLOUDS -->
-    <div class="clouds">
-
-        <div class="cloud" style="width:180px;height:80px;top:15%;animation-duration:30s;"></div>
-        <div class="cloud" style="width:220px;height:90px;top:35%;animation-duration:45s;"></div>
-        <div class="cloud" style="width:200px;height:85px;top:60%;animation-duration:38s;"></div>
-        <div class="cloud" style="width:250px;height:100px;top:75%;animation-duration:55s;"></div>
-
-    </div>
-
     <div class="hero-content">
-
-        <div class="hero-images">
-            <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/new_tyom_2.jpg?v=1781461221">
-            <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_2040.jpg?v=1781461384">
-            <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_9529_1_1.jpg?v=1781461485">
-        </div>
 
         <h1>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ</h1>
 
         <p>Մկրտության Օր • 17 Հուլիսի 2026</p>
 
+        <!-- COUNTDOWN -->
+        <div class="countdown">
+
+            <div class="box">
+                <span>⛪ 15:00</span>
+                Եկեղեցի
+            </div>
+
+            <div class="box">
+                <span>🎉 17:00</span>
+                Հանդիսություն
+            </div>
+
+            <div class="box">
+                <span>📅</span>
+                17/07/2026
+            </div>
+
+        </div>
+
     </div>
 
 </section>
 
-<!-- DETAILS -->
+<!-- ABOUT -->
 <section class="section">
 
-    <div class="title">Միջոցառման Մանրամասներ</div>
+    <div class="title">Մեր Օրը</div>
 
-    <div class="info">
+    <div class="text">
 
-        Սիրով հրավիրում ենք Ձեզ մասնակցելու մեր փոքրիկների մկրտությանը։
+        Սիրով հրավիրում ենք Ձեզ մեր փոքրիկների մկրտությանը։
+        Օրը սկսվելու է սուրբ արարողությամբ եկեղեցում,
+        այնուհետև կշարունակվի գեղեցիկ և ջերմ տոնական երեկոյով։
 
-        <div class="card">
-
-            ⛪ Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)<br><br>
-            🕒 Մկրտության արարողություն՝ 15:00<br><br>
-            🎉 Palladium Hall (Տոնական ընդունելություն)<br><br>
-            🕔 Ընդունելություն՝ 17:00<br><br>
-            📅 17 Հուլիսի 2026
-
+        <div class="quote">
+            “Թող այս օրը լինի օրհնության, սիրո և խաղաղության սկիզբ”
         </div>
 
-        <p style="margin-top:30px;">
-            Ձեր ներկայությունը մեզ համար մեծ ուրախություն կլինի ❤️
-        </p>
+    </div>
+
+</section>
+
+<!-- RSVP -->
+<section class="rsvp">
+
+    <div class="rsvp-box">
+
+        <h2>Կմասնակցե՞ք մեր միջոցառմանը</h2>
+
+        <p>Խնդրում ենք նշել Ձեր մասնակցությունը</p>
+
+        <div class="buttons">
+
+            <button class="btn yes">Այո, կգամ</button>
+            <button class="btn no">Ցավոք, չեմ կարող</button>
+
+        </div>
 
     </div>
 
