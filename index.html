@@ -4,135 +4,82 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Baptism Invitation</title>
+<title>Մկրտության Օր</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================
-   BASE
+   RESET
 ========================= */
 
 *{margin:0;padding:0;box-sizing:border-box;}
 
+html{
+    scroll-behavior:smooth; /* IMPORTANT FIX */
+}
+
 body{
     font-family:'Poppins',sans-serif;
-    overflow:hidden;
     background:#f6efe7;
+    color:#3b2f2a;
 }
 
 /* =========================
-   CINEMATIC BACKGROUND
+   HERO
 ========================= */
 
-.scene{
-    position:relative;
+.hero{
     height:100vh;
-    width:100%;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    color:#3b2f2a;
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(135deg,#f7efe6,#e9ddcf);
 }
 
-/* SOFT CLOUD LAYERS */
-
-.clouds{
+/* floating soft background */
+.hero::before{
+    content:"";
     position:absolute;
     width:100%;
     height:100%;
-    top:0;
-    left:0;
     background:
-        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.8), transparent 40%),
-        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.7), transparent 45%),
-        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.6), transparent 50%);
-    filter:blur(25px);
-    animation:cloudMove 12s infinite alternate ease-in-out;
-    opacity:0.8;
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,0.7), transparent 50%);
+    filter:blur(20px);
 }
 
-@keyframes cloudMove{
-    0%{transform:translateX(-20px) scale(1);}
-    100%{transform:translateX(20px) scale(1.05);}
-}
-
-/* =========================
-   GLORIOUS CROSS LIGHT
-========================= */
-
-.cross{
-    position:absolute;
-    font-size:320px;
-    color:rgba(255,255,255,0.12);
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    text-shadow:
-        0 0 30px rgba(255,255,255,0.6),
-        0 0 80px rgba(255,220,190,0.4),
-        0 0 120px rgba(255,200,160,0.3);
-    animation:glow 4s infinite alternate ease-in-out;
-}
-
-@keyframes glow{
-    from{opacity:0.4; transform:translate(-50%,-50%) scale(1);}
-    to{opacity:0.9; transform:translate(-50%,-50%) scale(1.08);}
-}
-
-/* =========================
-   CONTENT (LIKE VIDEO TITLE)
-========================= */
-
+/* CONTENT */
 .content{
     position:relative;
     z-index:2;
-    animation:fadeIn 2s ease forwards;
-}
-
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
 }
 
 /* TITLE */
 h1{
     font-size:clamp(2.5rem,6vw,4rem);
     font-weight:600;
-    letter-spacing:2px;
 }
 
-/* SUBTITLE */
+/* SUB */
 p{
     margin-top:10px;
-    font-size:1.1rem;
     color:#6a5a52;
 }
 
-/* DATE BOX */
-.date{
-    margin-top:25px;
-    display:inline-block;
-    padding:12px 25px;
-    border-radius:40px;
-    background:rgba(255,255,255,0.7);
-    backdrop-filter:blur(10px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    font-weight:500;
-}
-
-/* CTA BUTTON */
+/* BUTTON */
 .btn{
-    margin-top:30px;
     display:inline-block;
+    margin-top:25px;
     padding:15px 40px;
     border-radius:50px;
-    background:linear-gradient(135deg,#b08a6a,#e2c4a8);
+    background:linear-gradient(135deg,#b08a6a,#d6b89a);
     color:white;
     font-weight:600;
-    cursor:pointer;
     text-decoration:none;
     transition:0.3s;
 }
@@ -142,24 +89,23 @@ p{
 }
 
 /* =========================
-   FLOATING LIGHT PARTICLES
+   DETAILS SECTION
 ========================= */
 
-.scene::after{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:
-        radial-gradient(circle, rgba(255,255,255,0.3) 2px, transparent 3px);
-    background-size:60px 60px;
-    animation:float 8s linear infinite;
-    opacity:0.3;
+.section{
+    padding:100px 20px;
+    text-align:center;
+    background:#fff;
 }
 
-@keyframes float{
-    from{transform:translateY(0);}
-    to{transform:translateY(-60px);}
+.card{
+    margin:auto;
+    margin-top:30px;
+    max-width:700px;
+    padding:30px;
+    border-radius:20px;
+    background:#f7efe6;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 </style>
@@ -167,30 +113,40 @@ p{
 
 <body>
 
-<div class="scene">
+<!-- HERO -->
+<section class="hero">
 
-    <!-- CLOUDS -->
-    <div class="clouds"></div>
-
-    <!-- GLORIOUS CROSS -->
-    <div class="cross">✝</div>
-
-    <!-- CONTENT -->
     <div class="content">
 
         <h1>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ</h1>
 
-        <p>Մկրտության Սուրբ Օր</p>
+        <p>Մկրտության Օր • 17 Հուլիսի 2026</p>
 
-        <div class="date">17 Հուլիսի 2026</div>
-
-        <br>
-
-        <a class="btn" href="#details">Բացել Մանրամասները</a>
+        <!-- FIXED BUTTON -->
+        <a class="btn" href="#details">
+            Բացել Մանրամասները ↓
+        </a>
 
     </div>
 
-</div>
+</section>
+
+<!-- DETAILS (IMPORTANT ID FIX) -->
+<section class="section" id="details">
+
+    <h2>Միջոցառման Մանրամասներ</h2>
+
+    <div class="card">
+
+        ⛪ Եկեղեցի՝ 15:00<br><br>
+        🎉 Ռեստորան՝ 17:00<br><br>
+        📅 17 Հուլիսի 2026<br><br>
+
+        Սիրով սպասում ենք Ձեզ ❤️
+
+    </div>
+
+</section>
 
 </body>
 </html>
