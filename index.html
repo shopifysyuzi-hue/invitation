@@ -1,127 +1,208 @@
 ```html
-<!-- HERO SECTION -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ</h1>
-        <p class="subtitle">Մկրտության Օր</p>
-        <p>17 Հուլիսի, 2026</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROZI TEONA ARTYOM BLESSING DAY | 17.07.2026</title>
 
-        <a href="#details" class="btn">
-            Մանրամասներ
-        </a>
-    </div>
-</section>
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- ABOUT SECTION -->
-<section id="details" class="about">
-    <div class="container">
+<style>
+/* =========================
+   GLOBAL STYLES
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        <div class="section-title">
-            <h2>Մեր Հատուկ Օրը</h2>
-        </div>
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fafafa;
+    color:#333;
+    line-height:1.6;
+}
 
-        <div class="about-content">
-            <p>
-                Սիրով հրավիրում ենք Ձեզ մասնակցելու
-                Ռոզիի, Տեոնայի և Արտյոմի մկրտության
-                սուրբ արարողությանը։
-            </p>
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
 
-            <br>
+section{
+    padding:90px 0;
+}
 
-            <p>
-                Այս կարևոր և օրհնված օրը մեզ համար
-                առավել գեղեցիկ կլինի Ձեր ներկայությամբ։
-            </p>
-        </div>
+h1,h2,h3{
+    margin-bottom:20px;
+}
 
-    </div>
-</section>
+p{
+    color:#666;
+}
 
-<!-- EVENT DETAILS -->
-<section class="features">
-    <div class="container">
+/* =========================
+   HERO SECTION
+========================= */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(
+        135deg,
+        #fff8f5 0%,
+        #fdf1f4 50%,
+        #f8f7ff 100%
+    );
+}
 
-        <div class="section-title">
-            <h2>Միջոցառման Մանրամասներ</h2>
-        </div>
+.hero-content{
+    max-width:800px;
+}
 
-        <div class="features-grid">
+.hero h1{
+    font-size:clamp(2.5rem,6vw,5rem);
+    font-weight:700;
+    color:#222;
+}
 
-            <div class="feature-card">
-                <div class="feature-icon">📅</div>
-                <h3>Ամսաթիվ</h3>
-                <p>
-                    17 Հուլիսի, 2026
-                </p>
-            </div>
+.hero span{
+    color:#d9779b;
+}
 
-            <div class="feature-card">
-                <div class="feature-icon">⛪</div>
-                <h3>Մկրտության Արարողություն</h3>
-                <p>
-                    Սուրբ Հովհաննես Մկրտիչ եկեղեցի
-                    (Աբովյան)
-                </p>
-            </div>
+.hero p{
+    margin:25px auto;
+    font-size:1.1rem;
+    max-width:600px;
+}
 
-            <div class="feature-card">
-                <div class="feature-icon">🕔</div>
-                <h3>Սկիզբ</h3>
-                <p>
-                    Ժամը 17:00
-                </p>
-            </div>
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#d9779b;
+    color:white;
+    text-decoration:none;
+    border-radius:50px;
+    transition:0.3s ease;
+    font-weight:600;
+}
 
-            <div class="feature-card">
-                <div class="feature-icon">🎉</div>
-                <h3>Տոնական Ընդունելություն</h3>
-                <p>
-                    Palladium Hall
-                </p>
-            </div>
+.btn:hover{
+    background:#c86489;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(217,119,155,0.25);
+}
 
-        </div>
+/* =========================
+   ABOUT SECTION
+========================= */
+.about{
+    background:white;
+}
 
-    </div>
-</section>
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
 
-<!-- INVITATION SECTION -->
-<section class="contact">
-    <div class="container">
+.section-title h2{
+    font-size:2.3rem;
+    color:#222;
+}
 
-        <div class="section-title">
-            <h2>Սիրով Սպասում Ենք Ձեզ</h2>
-        </div>
+.about-content{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
 
-        <div class="contact-box">
+.about-content p{
+    font-size:1.05rem;
+}
 
-            <p>
-                Եկեք միասին կիսենք այս գեղեցիկ,
-                օրհնված և հիշարժան օրը։
-            </p>
+/* =========================
+   FEATURES SECTION
+========================= */
+.features{
+    background:#f8f9fc;
+}
 
-            <p>
-                Ձեր ներկայությունը մեր ամենաթանկ
-                նվերն է։
-            </p>
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
 
-            <a href="#" class="btn">
-                17 • 07 • 2026
-            </a>
+.feature-card{
+    background:white;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
 
-        </div>
+.feature-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
 
-    </div>
-</section>
+.feature-icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
 
-<!-- FOOTER -->
-<footer>
-    <p>
-        Ռոզի • Տեոնա • Արտյոմ
-        <br>
-        Մկրտության Օր • 17.07.2026
-    </p>
-</footer>
+.feature-card h3{
+    color:#222;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+.contact{
+    background:white;
+    text-align:center;
+}
+
+.contact-box{
+    max-width:650px;
+    margin:auto;
+    padding:40px;
+    border-radius:25px;
+    background:linear-gradient(
+        135deg,
+        #fff7fa,
+        #f7f8ff
+    );
+}
+
+.contact-box p{
+    margin-bottom:20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+    background:#111;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+footer p{
+    color:#ddd;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media(max-width:768px){
+
+    section
 ```
-
