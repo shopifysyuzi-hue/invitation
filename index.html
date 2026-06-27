@@ -10,93 +10,91 @@
 <style>
 body{
     margin:0;
-    background:#fbf7f2;
     font-family:"Cormorant Garamond", serif;
+    background:#fbf7f2;
     color:#2b2b2b;
 }
 
 html{scroll-behavior:smooth;}
 
-/* HERO */
-.hero{
+/* OPENING */
+.opening{
     height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    flex-direction:column;
     text-align:center;
+    flex-direction:column;
     background:
-    linear-gradient(rgba(251,247,242,0.65), rgba(251,247,242,0.9)),
+    linear-gradient(rgba(251,247,242,0.7), rgba(251,247,242,0.95)),
     url("https://images.unsplash.com/photo-1520975928311-4b3a2f1f2b3f?auto=format&fit=crop&w=1600&q=80");
     background-size:cover;
     background-position:center;
     padding:20px;
 }
 
-.hero h1{
+.opening h1{
     font-family:"Playfair Display", serif;
-    font-size:60px;
-    letter-spacing:3px;
+    font-size:48px;
+    letter-spacing:2px;
 }
 
-.hero p{
-    font-size:20px;
-    color:#5a5a5a;
+.opening p{
+    font-size:18px;
     margin-top:10px;
-    max-width:700px;
+    color:#5a5a5a;
+    max-width:320px;
 }
 
-/* INTRO TEXT */
-.intro{
-    max-width:750px;
-    margin:80px auto 0;
-    text-align:center;
-    font-size:19px;
-    color:#666;
-    line-height:1.7;
+.open-btn{
+    margin-top:30px;
+    padding:12px 28px;
+    border:1px solid #2b2b2b;
+    text-decoration:none;
+    color:#2b2b2b;
+    font-size:14px;
+    letter-spacing:1px;
 }
 
 /* SECTION */
 section{
-    padding:100px 20px;
-    max-width:1000px;
+    padding:80px 18px;
+    max-width:900px;
     margin:auto;
     text-align:center;
 }
 
 h2{
     font-family:"Playfair Display", serif;
-    font-size:38px;
-    margin-bottom:50px;
-    letter-spacing:2px;
+    font-size:32px;
+    margin-bottom:35px;
 }
 
 /* CALENDAR */
 .calendar{
-    max-width:380px;
-    margin:0 auto 80px;
+    max-width:340px;
+    margin:0 auto 70px;
     background:#fff;
     border:1px solid #e8ddd2;
     border-radius:14px;
-    padding:25px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    padding:18px;
 }
 
 .month{
+    font-size:20px;
+    margin-bottom:10px;
     font-family:"Playfair Display", serif;
-    font-size:22px;
-    margin-bottom:15px;
 }
 
 .days{
     display:grid;
     grid-template-columns:repeat(7,1fr);
-    gap:6px;
+    gap:5px;
+    font-size:14px;
 }
 
 .day{
-    padding:8px;
-    font-size:15px;
+    padding:7px;
     color:#777;
 }
 
@@ -106,31 +104,47 @@ h2{
     border-radius:6px;
 }
 
-/* BLOCK */
-.block{
-    margin-bottom:50px;
-    border:1px solid #e8ddd2;
+/* CARD */
+.card{
     background:#fff;
+    border:1px solid #e8ddd2;
     border-radius:14px;
     overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,0.04);
+    margin-bottom:35px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.04);
 }
 
-.block img{
+.card img{
     width:100%;
-    height:360px;
+    height:240px;
     object-fit:cover;
 }
 
 .content{
-    padding:28px;
+    padding:20px;
 }
 
 .title{
     font-family:"Playfair Display", serif;
-    font-size:22px;
-    letter-spacing:2px;
-    margin-bottom:10px;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+p{
+    font-size:16px;
+    color:#555;
+    line-height:1.5;
+}
+
+/* MAP BUTTON */
+.map-btn{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 14px;
+    border:1px solid #2b2b2b;
+    text-decoration:none;
+    color:#2b2b2b;
+    font-size:13px;
 }
 
 /* RSVP */
@@ -138,17 +152,13 @@ h2{
     background:#fff;
     border:1px solid #e8ddd2;
     border-radius:14px;
-    padding:30px;
-    max-width:600px;
-    margin:0 auto;
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+    padding:20px;
 }
 
 input, textarea{
     width:100%;
-    padding:12px;
-    margin-top:10px;
-    margin-bottom:16px;
+    padding:10px;
+    margin:10px 0;
     border:1px solid #ddd;
     border-radius:8px;
     font-family:inherit;
@@ -160,13 +170,13 @@ button{
     border:none;
     background:#2b2b2b;
     color:#fff;
-    cursor:pointer;
 }
 
+/* FOOTER */
 .footer{
     text-align:center;
-    padding:70px 20px;
-    font-size:14px;
+    padding:50px 15px;
+    font-size:13px;
     color:#888;
 }
 </style>
@@ -174,25 +184,21 @@ button{
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
+<!-- OPENING -->
+<div class="opening">
     <h1>ՄԿՐՏՈՒԹՅԱՆ ՀՐԱՎԵՐ</h1>
-    <p>Սիրով հրավիրում ենք Ձեզ մասնակցելու մեր ընտանիքի համար այս հատուկ և հիշարժան օրվան՝ Ռոզիի, Տեոնայի և Արտյոմի մկրտությանը, ինչպես նաև Արտյոմի 1-ամյակի տոնին։</p>
+    <p>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ<br>17 ՀՈՒԼԻՍ 2026</p>
+    <a class="open-btn" href="#content">ԲԱՑԵԼ ՀՐԱՎԵՐԸ</a>
 </div>
 
-<!-- INTRO -->
-<div class="intro">
-    Ձեր ներկայությունը մեզ համար մեծ ուրախություն կլինի և կդարձնի այս օրը առավել հիշարժան և ջերմ։
-</div>
+<!-- CONTENT -->
+<section id="content">
 
-<!-- DETAILS -->
-<section>
-
-<h2>ՄԻՋՈՑԱՌՄԱՆ ՕՐԱԿԱՐԳ</h2>
+<h2>2026 ՀՈՒԼԻՍ</h2>
 
 <!-- CALENDAR -->
 <div class="calendar">
-    <div class="month">ՀՈՒԼԻՍ 2026</div>
+    <div class="month">ՀՈՒԼԻՍ</div>
     <div class="days">
         <div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day">7</div>
         <div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div>
@@ -203,7 +209,7 @@ button{
 </div>
 
 <!-- CHURCH -->
-<div class="block">
+<div class="card">
     <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-053.jpg?v=1782592300">
     <div class="content">
         <div class="title">ՍՈՒՐԲ ՀՈՎՀԱՆՆԵՍ ՄԿՐՏԻՉ ԵԿԵՂԵՑԻ</div>
@@ -212,38 +218,41 @@ button{
             12 Russia Street, Abovyan<br><br>
             14:00
         </p>
+        <a class="map-btn" href="https://www.google.com/maps/place/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C+%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE+%D0%98%D0%BE%D0%B0%D0%BD%D0%BD%D0%B0+%D0%9A%D1%80%D0%B5%D1%81%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8F/data=!4m2!3m1!1s0x0:0xd8c583e01d008291?sa=X&ved=1t:2428&ictx=111" target="_blank">
+        OPEN IN MAP
+        </a>
     </div>
 </div>
 
 <!-- RESTAURANT -->
-<div class="block">
+<div class="card">
     <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-307.jpg?v=1782592300">
     <div class="content">
         <div class="title">BERGAMO</div>
         <p>
-            Ջրվեժ 3-րդ թաղամաս, 8/12<br><br>
+            Ջրվեժ 3-րդ թաղամաս, 8/12<br>
             17:30
         </p>
+        <a class="map-btn" href="https://www.google.com/maps/place/Bergamo+Restaurant/data=!4m2!3m1!1s0x0:0xd924f9cadb04fa28?sa=X&ved=1t:2428&ictx=111" target="_blank">
+        OPEN IN MAP
+        </a>
     </div>
 </div>
 
-</section>
-
 <!-- RSVP -->
-<section>
-<h2>ՀԱՍՏԱՏՈՒՄ (RSVP)</h2>
+<h2>ՀԱՍՏԱՏՈՒՄ</h2>
 
 <div class="rsvp">
     <input type="text" placeholder="Անուն և ազգանուն">
     <input type="number" placeholder="Հյուրերի քանակ">
-    <textarea rows="4" placeholder="Մասնակիցների անուններ / հաղորդագրություն"></textarea>
-    <button>Ուղարկել</button>
+    <textarea rows="4" placeholder="Հյուրերի անուններ / հաղորդագրություն"></textarea>
+    <button>ՈւՂԱՐԿԵԼ</button>
 </div>
 
 </section>
 
 <div class="footer">
-Սիրով հրավիրում ենք • 17.07.2026
+Սիրով հրավիրում ենք մեր մկրտության տոնին • 17.07.2026
 </div>
 
 </body>
