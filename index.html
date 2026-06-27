@@ -1,525 +1,170 @@
 <!DOCTYPE html>
 <html lang="hy">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Մկրտության Հրավեր</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+Armenian:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Armenian-friendly font -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-
-background:
-linear-gradient(180deg,#fefcf8,#f7f1ea);
-
-font-family:'Noto Sans Armenian',sans-serif;
-color:#56463a;
-overflow-x:hidden;
-
-}
-
-section{
-
-padding:90px 25px;
-
-}
-
-.container{
-
-max-width:1100px;
-margin:auto;
-
-}
-
-.hero{
-
-min-height:100vh;
-
-display:flex;
-
-align-items:center;
-justify-content:center;
-
-text-align:center;
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-.hero:before{
-
-content:'';
-
-position:absolute;
-
-width:700px;
-height:700px;
-
-background:radial-gradient(circle,#fff8ef 0%,transparent 70%);
-
-top:-250px;
-right:-180px;
-
-}
-
-.hero:after{
-
-content:'';
-
-position:absolute;
-
-width:600px;
-height:600px;
-
-background:radial-gradient(circle,#f9efe4 0%,transparent 70%);
-
-left:-180px;
-bottom:-200px;
-
-}
-
-.hero-content{
-
-position:relative;
-z-index:5;
-
-}
-
-.subtitle{
-
-letter-spacing:5px;
-text-transform:uppercase;
-
-font-size:14px;
-
-color:#b89259;
-
-margin-bottom:15px;
-
-}
-
-h1{
-
-font-family:'Cormorant Garamond',serif;
-
-font-size:68px;
-
-font-weight:500;
-
-margin-bottom:15px;
-
-color:#8b6b3f;
-
-}
-
-.hero h2{
-
-font-size:26px;
-font-weight:400;
-margin-bottom:30px;
-
-line-height:1.6;
-
-}
-
-.date{
-
-display:inline-block;
-
-padding:15px 35px;
-
-border:1px solid #d7bf96;
-
-border-radius:40px;
-
-font-size:20px;
-
-background:white;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-}
-
-.card{
-
-background:white;
-
-border-radius:35px;
-
-padding:60px;
-
-margin-top:60px;
-
-box-shadow:0 20px 45px rgba(0,0,0,.08);
-
-display:grid;
-
-grid-template-columns:1fr 1fr;
-
-gap:60px;
-
-align-items:center;
-
-}
-
-.image{
-
-text-align:center;
-
-}
-
-.image img{
-
-width:100%;
-max-width:360px;
-
-filter:drop-shadow(0 25px 30px rgba(0,0,0,.15));
-
-animation:float 5s ease-in-out infinite;
-
-}
-
-@keyframes float{
-
-0%{transform:translateY(0);}
-50%{transform:translateY(-18px);}
-100%{transform:translateY(0);}
-
-}
-
-.info h3{
-
-font-family:'Cormorant Garamond';
-
-font-size:42px;
-
-margin-bottom:25px;
-
-color:#8b6b3f;
-
-}
-
-.info p{
-
-font-size:18px;
-
-line-height:1.9;
-
-margin-bottom:15px;
-
-}
-
-.timeline{
-
-display:flex;
-
-justify-content:center;
-
-gap:45px;
-
-flex-wrap:wrap;
-
-margin-top:70px;
-
-}
-
-.event{
-
-background:white;
-
-padding:35px;
-
-width:280px;
-
-border-radius:30px;
-
-text-align:center;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-}
-
-.event h4{
-
-font-family:'Cormorant Garamond';
-
-font-size:34px;
-
-margin-bottom:15px;
-
-color:#8b6b3f;
-
-}
-
-.footer{
-
-padding:90px 20px;
-
-text-align:center;
-
-}
-
-.footer h2{
-
-font-family:'Cormorant Garamond';
-
-font-size:48px;
-
-margin-bottom:20px;
-
-}
-
-.footer p{
-
-font-size:20px;
-
-line-height:1.8;
-
-}
-
-@media(max-width:900px){
-
-.card{
-
-grid-template-columns:1fr;
-
-padding:35px;
-
-}
-
-h1{
-
-font-size:52px;
-
-}
-
-}
-
+    body {
+        margin: 0;
+        font-family: "Noto Sans Armenian", sans-serif;
+        background: linear-gradient(180deg, #f7f5ff, #ffffff);
+        color: #333;
+    }
+
+    header {
+        text-align: center;
+        padding: 50px 20px;
+        background: #6c5ce7;
+        color: white;
+    }
+
+    header h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    header p {
+        font-size: 18px;
+        opacity: 0.9;
+    }
+
+    .hero-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .hero-images img {
+        width: 320px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .info {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .info h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 12px 18px;
+        margin: 5px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    .map-btn { background: #00b894; color: white; }
+    .call-btn { background: #0984e3; color: white; }
+    .rsvp-btn { background: #6c5ce7; color: white; }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    .rsvp {
+        max-width: 500px;
+        margin: auto;
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .rsvp input, .rsvp textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+
+    .rsvp button {
+        width: 100%;
+        background: #6c5ce7;
+        color: white;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+        color: #777;
+    }
+
+    @media(max-width: 768px){
+        header h1 { font-size: 28px; }
+        .hero-images img { width: 90%; }
+    }
 </style>
-
 </head>
 
 <body>
 
-<section class="hero">
+<header>
+    <h1>Տեոնայի Մկրտություն</h1>
+    <p>Մենք սիրով հրավիրում ենք ձեզ մասնակցելու այս գեղեցիկ օրվան 💜</p>
+</header>
 
-<div class="hero-content">
+<!-- IMAGES SECTION -->
+<div class="hero-images">
 
-<div class="subtitle">
-
-Սիրով հրավիրում ենք
-
-</div>
-
-<h1>
-
-Սուրբ Մկրտություն
-
-</h1>
-
-<h2>
-
-Ռոզի • Թեոնա • Արտյոմ
-
-</h2>
-
-<div class="date">
-
-17 Հուլիսի • 2026
+    <!-- Replace these with your generated 3D illustrations -->
+    <img src="church-illustration.png" alt="Եկեղեցի">
+    <img src="restaurant-illustration.png" alt="Ռեստորան">
 
 </div>
 
-</div>
+<!-- INFO -->
+<section class="info">
+    <h2>Օրվա մանրամասները</h2>
+    <p>📍 Եկեղեցի + Հյուրասիրություն ռեստորանում</p>
+    <p>🗓️ Ամսաթիվ: 13.08</p>
+    <p>⏰ Ժամ՝ 14:00</p>
 
+    <div class="buttons">
+        <button class="map-btn" onclick="window.open('https://maps.google.com')">Դիտել քարտեզը</button>
+        <button class="call-btn" onclick="window.location.href='tel:+37400000000'">Զանգահարել</button>
+        <button class="rsvp-btn" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth'})">RSVP</button>
+    </div>
 </section>
 
-<div class="container">
-
-<div class="card">
-
-<div class="image">
-
-<!-- Replace with your own PNG -->
-
-<img src="images/church.png">
-
-</div>
-
-<div class="info">
-
-<h3>
-
-⛪ Սուրբ Մկրտություն
-
-</h3>
-
-<p>
-
-Սիրով հրավիրում ենք Ձեզ ներկա գտնվելու
-Ռոզիի, Թեոնայի և Արտյոմի
-Սուրբ Մկրտության արարողությանը։
-
-</p>
-
-<p>
-
-📅 17 Հուլիսի, 2026
-
-</p>
-
-<p>
-
-🕑 Ժամը՝ 14։00
-
-</p>
-
-<p>
-
-📍 Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)
-
-</p>
-
-<p>
-
-Հասցե՝
-
-Ռուսաստանի փողոց 12,
-Աբովյան 2204
-
-</p>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<div class="info">
-
-<h3>
-
-🎉 Տոնական Ընդունելություն
-
-</h3>
-
-<p>
-
-Արարողությունից հետո սիրով հրավիրում ենք միասին շարունակելու
-այս հիշարժան օրը տոնական սեղանի շուրջ։
-
-</p>
-
-<p>
-
-🕔 Ժամը՝ 17։00
-
-</p>
-
-<p>
-
-📍 Bergamo Restaurant
-
-</p>
-
-<p>
-
-Հասցե՝
-
-Ջրվեժ 3-րդ թաղամաս,
-8/12,
-Ջրվեժ, Հայաստան
-
-</p>
-
-</div>
-
-<div class="image">
-
-<img src="images/restaurant.png">
-
-</div>
-
-</div>
-
-<div class="timeline">
-
-<div class="event">
-
-<h4>
-
-14։00
-
-</h4>
-
-<p>
-
-Սուրբ Մկրտության արարողություն
-
-</p>
-
-</div>
-
-<div class="event">
-
-<h4>
-
-17։00
-
-</h4>
-
-<p>
-
-Տոնական ընդունելություն
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<section class="footer">
-
-<h2>
-
-Հատուկ Օր
-
-</h2>
-
-<p>
-
-Այս օրը կրկնակի ուրախություն է մեզ համար,
-քանի որ Արտյոմը նշում է նաև իր առաջին տարեդարձը։
-
-</p>
-
-<br>
-
-<p>
-
-Սիրով կսպասենք Ձեր ներկայությանը,
-որպեսզի միասին կիսենք այս գեղեցիկ և հիշարժան օրը։
-
-</p>
-
+<!-- RSVP -->
+<section id="rsvp">
+    <div class="rsvp">
+        <h2 style="text-align:center;">Հաստատել մասնակցությունը</h2>
+
+        <input type="text" placeholder="Ձեր անունը">
+        <input type="number" placeholder="Հյուրերի քանակը">
+        <textarea rows="4" placeholder="Ձեր հաղորդագրությունը"></textarea>
+
+        <button onclick="alert('Շնորհակալություն ձեր պատասխանելու համար ❤️')">
+            Ուղարկել
+        </button>
+    </div>
 </section>
+
+<footer>
+    Սիրով սպասում ենք ձեզ մեր հատուկ օրը 💜
+</footer>
 
 </body>
 </html>
