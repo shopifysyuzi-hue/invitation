@@ -82,7 +82,6 @@
         color: #fff;
     }
 
-    /* SECTIONS */
     section {
         padding: 110px 20px;
         max-width: 950px;
@@ -97,28 +96,31 @@
         font-weight: 500;
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 25px;
-    }
-
-    .card {
-        background: #fff;
+    /* IMAGE CARDS */
+    .image-card {
+        margin-bottom: 40px;
+        border-radius: 14px;
+        overflow: hidden;
         border: 1px solid #e8e3dc;
-        padding: 30px;
-        border-radius: 12px;
-        transition: 0.3s;
+        background: white;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
 
-    .card:hover {
-        transform: translateY(-6px);
+    .image-card img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .image-card .content {
+        padding: 25px;
     }
 
     .title {
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 600;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
     }
 
     p {
@@ -184,11 +186,12 @@
 <!-- DETAILS -->
 <section id="details">
 
-    <h2>Միջոցառման մանրամասներ</h2>
+    <h2>Միջոցառման ընթացքը</h2>
 
-    <div class="grid">
-
-        <div class="card">
+    <!-- CHURCH -->
+    <div class="image-card">
+        <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-307.jpg?v=1782592300" />
+        <div class="content">
             <div class="title">Մկրտության արարողություն</div>
             <p>
                 Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)<br>
@@ -196,25 +199,32 @@
                 17.07.2026
             </p>
         </div>
+    </div>
 
-        <div class="card">
-            <div class="title">Հանդիսավոր խնջույք</div>
+    <!-- RESTAURANT -->
+    <div class="image-card">
+        <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-053.jpg?v=1782592300" />
+        <div class="content">
+            <div class="title">Տոնական խնջույք</div>
             <p>
                 Bergamo ռեստորան<br>
                 Ջրվեժ 3-րդ թաղամաս, 8/12, Հայաստան<br><br>
                 17:30
             </p>
         </div>
+    </div>
 
-        <div class="card">
+    <!-- SPECIAL -->
+    <div class="image-card">
+        <div class="content">
             <div class="title">Հատուկ առիթ</div>
             <p>
                 Ռոզի, Տեոնա և Արտյոմի մկրտություն<br>
                 Արտյոմի 1-ամյակի տոն 🎂
             </p>
         </div>
-
     </div>
+
 </section>
 
 <!-- RSVP -->
