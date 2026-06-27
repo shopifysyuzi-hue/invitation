@@ -1,111 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hy">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Baptism Invitation</title>
+<title>Մկրտության հրավեր</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
     body {
         margin: 0;
-        font-family: 'Segoe UI', Tahoma, sans-serif;
-        background: #f8f6f2;
+        font-family: "Cormorant Garamond", serif;
+        background: #fbfaf8;
         color: #2b2b2b;
+        scroll-behavior: smooth;
     }
 
+    /* HERO */
     .hero {
         height: 100vh;
-        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-        url('https://images.unsplash.com/photo-1520975928311-4b3a2f1f2b3f?auto=format&fit=crop&w=1600&q=80');
-        background-size: cover;
-        background-position: center;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: white;
         flex-direction: column;
-        padding: 20px;
+        background:
+        linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.7)),
+        url('https://images.unsplash.com/photo-1520975928311-4b3a2f1f2b3f?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
     }
 
     .hero h1 {
-        font-size: 48px;
-        margin: 0;
+        font-family: "Playfair Display", serif;
+        font-size: 52px;
         letter-spacing: 2px;
+        margin: 0;
+        color: #2a2a2a;
     }
 
     .hero p {
         font-size: 20px;
         margin-top: 10px;
-        opacity: 0.9;
+        color: #4a4a4a;
+    }
+
+    .date {
+        margin-top: 10px;
+        font-size: 18px;
+        letter-spacing: 1px;
+        color: #6b6b6b;
     }
 
     .btn {
-        margin-top: 25px;
-        padding: 12px 24px;
-        border: none;
-        background: white;
-        color: black;
-        font-weight: bold;
-        cursor: pointer;
-        border-radius: 30px;
+        margin-top: 30px;
+        padding: 12px 28px;
+        border: 1px solid #2b2b2b;
+        background: transparent;
         text-decoration: none;
+        color: #2b2b2b;
+        font-size: 16px;
+        transition: 0.3s;
     }
 
+    .btn:hover {
+        background: #2b2b2b;
+        color: white;
+    }
+
+    /* SECTIONS */
     section {
-        padding: 70px 20px;
-        max-width: 1000px;
+        padding: 90px 20px;
+        max-width: 950px;
         margin: auto;
+        text-align: center;
     }
 
     h2 {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .card {
-        background: white;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        margin-bottom: 20px;
+        font-family: "Playfair Display", serif;
+        font-size: 34px;
+        margin-bottom: 40px;
+        font-weight: 500;
     }
 
     .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+
+    .card {
+        background: white;
+        border: 1px solid #eae6e1;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
     }
 
     .label {
-        font-weight: bold;
-        margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    /* RSVP */
+    input, textarea {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        margin-bottom: 18px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: inherit;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        background: #2b2b2b;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    button:hover {
+        background: #444;
     }
 
     .footer {
         text-align: center;
-        padding: 40px;
+        padding: 50px;
         font-size: 14px;
-        color: #777;
+        color: #888;
     }
 
-    input, textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 8px;
-        margin-bottom: 15px;
-        border-radius: 8px;
-        border: 1px solid #ddd;
-    }
-
-    button.submit {
-        background: black;
-        color: white;
-        padding: 12px;
-        border: none;
-        width: 100%;
-        border-radius: 10px;
-        cursor: pointer;
+    /* subtle divider */
+    .line {
+        width: 80px;
+        height: 1px;
+        background: #cfc7bd;
+        margin: 20px auto;
     }
 </style>
 </head>
@@ -114,43 +161,42 @@
 
 <!-- HERO -->
 <div class="hero">
-    <h1>Baptism Invitation</h1>
-    <p>Rozi • Teona • Artyom</p>
-    <p>17 July 2026</p>
-    <a href="#details" class="btn">View Details</a>
+    <h1>Մկրտության հրավեր</h1>
+    <div class="line"></div>
+    <p>Ռոզի • Տեոնա • Արտյոմ</p>
+    <div class="date">17 Հուլիսի 2026</div>
+    <a href="#details" class="btn">Տես մանրամասները</a>
 </div>
 
 <!-- DETAILS -->
 <section id="details">
-    <h2>Event Details</h2>
+    <h2>Միջոցառման մանրամասներ</h2>
 
     <div class="grid">
 
         <div class="card">
-            <div class="label">Baptism Ceremony</div>
+            <div class="label">Մկրտություն</div>
             <p>
                 Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)<br/>
-                12 Russia Street, Abovyan 2204<br/>
-                <br/>
+                12 Russia Street, Abovyan 2204<br/><br/>
                 📅 17.07.2026
             </p>
         </div>
 
         <div class="card">
-            <div class="label">Celebration Party</div>
+            <div class="label">Հանդիսություն</div>
             <p>
-                Bergamo Restaurant<br/>
-                Ջրվեժ 3-րդ թաղամաս, 8/12, Jrvezh, Armenia<br/>
-                <br/>
+                Bergamo ռեստորան<br/>
+                Ջրվեժ 3-րդ թաղամաս, 8/12, Հայաստան<br/><br/>
                 🕠 17:30
             </p>
         </div>
 
         <div class="card">
-            <div class="label">Special Moment</div>
+            <div class="label">Հատուկ առիթ</div>
             <p>
-                Baptism of Rozi, Teona & Artyom<br/>
-                Also celebrating Artyom’s 1st birthday 🎂
+                Ռոզի, Տեոնա և Արտյոմի մկրտություն<br/>
+                Արտյոմի 1-ամյակի տոն 🎂
             </p>
         </div>
 
@@ -159,26 +205,20 @@
 
 <!-- RSVP -->
 <section>
-    <h2>RSVP</h2>
+    <h2>Հաստատում (RSVP)</h2>
 
     <div class="card">
         <form>
-            <label>Your Name</label>
-            <input type="text" placeholder="Enter your name"/>
-
-            <label>Will you attend?</label>
-            <input type="text" placeholder="Yes / No"/>
-
-            <label>Message</label>
-            <textarea rows="4" placeholder="Write a message..."></textarea>
-
-            <button class="submit" type="submit">Send RSVP</button>
+            <input type="text" placeholder="Ձեր անունը"/>
+            <input type="text" placeholder="Մասնակցելու եք՞ (Այո / Ոչ)"/>
+            <textarea rows="4" placeholder="Ձեր մաղթանքը..."></textarea>
+            <button type="submit">Ուղարկել</button>
         </form>
     </div>
 </section>
 
 <div class="footer">
-    With love • Baptism Celebration • 17.07.2026
+    Սիրով հրավիրում ենք մեր մկրտության տոնին • 17.07.2026
 </div>
 
 </body>
