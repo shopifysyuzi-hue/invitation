@@ -1,170 +1,185 @@
 <!DOCTYPE html>
-<html lang="hy">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Մկրտության Հրավեր</title>
-
-<!-- Armenian-friendly font -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Baptism Invitation</title>
 
 <style>
     body {
         margin: 0;
-        font-family: "Noto Sans Armenian", sans-serif;
-        background: linear-gradient(180deg, #f7f5ff, #ffffff);
-        color: #333;
+        font-family: 'Segoe UI', Tahoma, sans-serif;
+        background: #f8f6f2;
+        color: #2b2b2b;
     }
 
-    header {
+    .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://images.unsplash.com/photo-1520975928311-4b3a2f1f2b3f?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
-        padding: 50px 20px;
-        background: #6c5ce7;
         color: white;
+        flex-direction: column;
+        padding: 20px;
     }
 
-    header h1 {
-        font-size: 40px;
-        margin-bottom: 10px;
+    .hero h1 {
+        font-size: 48px;
+        margin: 0;
+        letter-spacing: 2px;
     }
 
-    header p {
-        font-size: 18px;
+    .hero p {
+        font-size: 20px;
+        margin-top: 10px;
         opacity: 0.9;
     }
 
-    .hero-images {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 30px;
-    }
-
-    .hero-images img {
-        width: 320px;
-        height: 220px;
-        object-fit: cover;
-        border-radius: 15px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-
-    .info {
-        text-align: center;
-        padding: 30px;
-    }
-
-    .info h2 {
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-
-    .buttons {
-        margin-top: 20px;
-    }
-
-    button {
-        padding: 12px 18px;
-        margin: 5px;
+    .btn {
+        margin-top: 25px;
+        padding: 12px 24px;
         border: none;
-        border-radius: 8px;
+        background: white;
+        color: black;
+        font-weight: bold;
         cursor: pointer;
-        font-size: 15px;
+        border-radius: 30px;
+        text-decoration: none;
     }
-
-    .map-btn { background: #00b894; color: white; }
-    .call-btn { background: #0984e3; color: white; }
-    .rsvp-btn { background: #6c5ce7; color: white; }
 
     section {
-        padding: 40px 20px;
+        padding: 70px 20px;
+        max-width: 1000px;
+        margin: auto;
     }
 
-    .rsvp {
-        max-width: 500px;
-        margin: auto;
+    h2 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .card {
         background: white;
         padding: 25px;
         border-radius: 15px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        margin-bottom: 20px;
     }
 
-    .rsvp input, .rsvp textarea {
-        width: 100%;
-        padding: 12px;
-        margin: 10px 0;
-        border-radius: 8px;
-        border: 1px solid #ddd;
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
     }
 
-    .rsvp button {
-        width: 100%;
-        background: #6c5ce7;
-        color: white;
+    .label {
+        font-weight: bold;
+        margin-bottom: 5px;
     }
 
-    footer {
+    .footer {
         text-align: center;
-        padding: 20px;
+        padding: 40px;
         font-size: 14px;
         color: #777;
     }
 
-    @media(max-width: 768px){
-        header h1 { font-size: 28px; }
-        .hero-images img { width: 90%; }
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+    }
+
+    button.submit {
+        background: black;
+        color: white;
+        padding: 12px;
+        border: none;
+        width: 100%;
+        border-radius: 10px;
+        cursor: pointer;
     }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Տեոնայի Մկրտություն</h1>
-    <p>Մենք սիրով հրավիրում ենք ձեզ մասնակցելու այս գեղեցիկ օրվան 💜</p>
-</header>
-
-<!-- IMAGES SECTION -->
-<div class="hero-images">
-
-    <!-- Replace these with your generated 3D illustrations -->
-    <img src="church-illustration.png" alt="Եկեղեցի">
-    <img src="restaurant-illustration.png" alt="Ռեստորան">
-
+<!-- HERO -->
+<div class="hero">
+    <h1>Baptism Invitation</h1>
+    <p>Rozi • Teona • Artyom</p>
+    <p>17 July 2026</p>
+    <a href="#details" class="btn">View Details</a>
 </div>
 
-<!-- INFO -->
-<section class="info">
-    <h2>Օրվա մանրամասները</h2>
-    <p>📍 Եկեղեցի + Հյուրասիրություն ռեստորանում</p>
-    <p>🗓️ Ամսաթիվ: 13.08</p>
-    <p>⏰ Ժամ՝ 14:00</p>
+<!-- DETAILS -->
+<section id="details">
+    <h2>Event Details</h2>
 
-    <div class="buttons">
-        <button class="map-btn" onclick="window.open('https://maps.google.com')">Դիտել քարտեզը</button>
-        <button class="call-btn" onclick="window.location.href='tel:+37400000000'">Զանգահարել</button>
-        <button class="rsvp-btn" onclick="document.getElementById('rsvp').scrollIntoView({behavior:'smooth'})">RSVP</button>
+    <div class="grid">
+
+        <div class="card">
+            <div class="label">Baptism Ceremony</div>
+            <p>
+                Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)<br/>
+                12 Russia Street, Abovyan 2204<br/>
+                <br/>
+                📅 17.07.2026
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="label">Celebration Party</div>
+            <p>
+                Bergamo Restaurant<br/>
+                Ջրվեժ 3-րդ թաղամաս, 8/12, Jrvezh, Armenia<br/>
+                <br/>
+                🕠 17:30
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="label">Special Moment</div>
+            <p>
+                Baptism of Rozi, Teona & Artyom<br/>
+                Also celebrating Artyom’s 1st birthday 🎂
+            </p>
+        </div>
+
     </div>
 </section>
 
 <!-- RSVP -->
-<section id="rsvp">
-    <div class="rsvp">
-        <h2 style="text-align:center;">Հաստատել մասնակցությունը</h2>
+<section>
+    <h2>RSVP</h2>
 
-        <input type="text" placeholder="Ձեր անունը">
-        <input type="number" placeholder="Հյուրերի քանակը">
-        <textarea rows="4" placeholder="Ձեր հաղորդագրությունը"></textarea>
+    <div class="card">
+        <form>
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter your name"/>
 
-        <button onclick="alert('Շնորհակալություն ձեր պատասխանելու համար ❤️')">
-            Ուղարկել
-        </button>
+            <label>Will you attend?</label>
+            <input type="text" placeholder="Yes / No"/>
+
+            <label>Message</label>
+            <textarea rows="4" placeholder="Write a message..."></textarea>
+
+            <button class="submit" type="submit">Send RSVP</button>
+        </form>
     </div>
 </section>
 
-<footer>
-    Սիրով սպասում ենք ձեզ մեր հատուկ օրը 💜
-</footer>
+<div class="footer">
+    With love • Baptism Celebration • 17.07.2026
+</div>
 
 </body>
 </html>
