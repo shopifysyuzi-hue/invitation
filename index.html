@@ -1,275 +1,525 @@
 <!DOCTYPE html>
 <html lang="hy">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Մկրտության Հրավեր</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+Armenian:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-/* =========================
-   RESET
-========================= */
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
-html{scroll-behavior:smooth;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-    font-family:'Poppins',sans-serif;
-    color:#2b2320;
-    background:#f7f1ea;
+
+background:
+linear-gradient(180deg,#fefcf8,#f7f1ea);
+
+font-family:'Noto Sans Armenian',sans-serif;
+color:#56463a;
+overflow-x:hidden;
+
 }
-
-/* =========================
-   BACKGROUND (STABLE)
-========================= */
-
-.bg{
-    position:fixed;
-    inset:0;
-    z-index:-2;
-}
-
-.bg img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    filter:blur(4px) brightness(1.2);
-    transform:scale(1.05);
-}
-
-/* soft overlay */
-.overlay{
-    position:fixed;
-    inset:0;
-    z-index:-1;
-    background:rgba(255,255,255,0.65);
-}
-
-/* =========================
-   SECTIONS
-========================= */
 
 section{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:60px 20px;
+
+padding:90px 25px;
+
 }
 
-/* =========================
-   HERO
-========================= */
+.container{
+
+max-width:1100px;
+margin:auto;
+
+}
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero:before{
+
+content:'';
+
+position:absolute;
+
+width:700px;
+height:700px;
+
+background:radial-gradient(circle,#fff8ef 0%,transparent 70%);
+
+top:-250px;
+right:-180px;
+
+}
+
+.hero:after{
+
+content:'';
+
+position:absolute;
+
+width:600px;
+height:600px;
+
+background:radial-gradient(circle,#f9efe4 0%,transparent 70%);
+
+left:-180px;
+bottom:-200px;
+
+}
+
+.hero-content{
+
+position:relative;
+z-index:5;
+
+}
+
+.subtitle{
+
+letter-spacing:5px;
+text-transform:uppercase;
+
+font-size:14px;
+
+color:#b89259;
+
+margin-bottom:15px;
+
+}
 
 h1{
-    font-size:clamp(2rem,5vw,3.5rem);
-    font-weight:600;
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:68px;
+
+font-weight:500;
+
+margin-bottom:15px;
+
+color:#8b6b3f;
+
 }
 
-p{
-    margin-top:15px;
-    color:#5a4a42;
-    max-width:650px;
-    line-height:1.6;
+.hero h2{
+
+font-size:26px;
+font-weight:400;
+margin-bottom:30px;
+
+line-height:1.6;
+
 }
 
-/* BUTTON */
-a.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:15px 40px;
-    border-radius:50px;
-    background:#b08a6a;
-    color:white;
-    font-weight:600;
-    text-decoration:none;
-    transition:0.3s;
-}
+.date{
 
-a.btn:hover{
-    transform:scale(1.05);
-}
+display:inline-block;
 
-/* =========================
-   CARD
-========================= */
+padding:15px 35px;
+
+border:1px solid #d7bf96;
+
+border-radius:40px;
+
+font-size:20px;
+
+background:white;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
 
 .card{
-    width:360px;
-    padding:30px;
-    border-radius:22px;
-    background:rgba(255,255,255,0.9);
-    backdrop-filter:blur(10px);
-    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+
+background:white;
+
+border-radius:35px;
+
+padding:60px;
+
+margin-top:60px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
 }
 
-/* =========================
-   COUNTDOWN
-========================= */
+.image{
 
-.countdown{
-    display:flex;
-    gap:10px;
-    justify-content:center;
-    margin-top:20px;
-    flex-wrap:wrap;
+text-align:center;
+
 }
 
-.box{
-    min-width:70px;
-    padding:10px;
-    border-radius:12px;
-    background:white;
-    box-shadow:0 10px 20px rgba(0,0,0,0.08);
+.image img{
+
+width:100%;
+max-width:360px;
+
+filter:drop-shadow(0 25px 30px rgba(0,0,0,.15));
+
+animation:float 5s ease-in-out infinite;
+
 }
 
-.box span{
-    font-size:1.6rem;
-    font-weight:700;
-    display:block;
+@keyframes float{
+
+0%{transform:translateY(0);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0);}
+
 }
 
-.box small{
-    color:#6b5b52;
+.info h3{
+
+font-family:'Cormorant Garamond';
+
+font-size:42px;
+
+margin-bottom:25px;
+
+color:#8b6b3f;
+
 }
 
-/* =========================
-   INPUT + BUTTONS
-========================= */
+.info p{
 
-input{
-    width:100%;
-    padding:12px;
-    margin-top:15px;
-    border-radius:10px;
-    border:1px solid #ddd;
+font-size:18px;
+
+line-height:1.9;
+
+margin-bottom:15px;
+
 }
 
-.buttons{
-    margin-top:15px;
-    display:flex;
-    gap:10px;
-    justify-content:center;
+.timeline{
+
+display:flex;
+
+justify-content:center;
+
+gap:45px;
+
+flex-wrap:wrap;
+
+margin-top:70px;
+
 }
 
-button{
-    padding:12px 25px;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    font-weight:600;
+.event{
+
+background:white;
+
+padding:35px;
+
+width:280px;
+
+border-radius:30px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
 }
 
-.yes{background:#b08a6a;color:white;}
-.no{background:#e6ddd4;color:#3b2f2a;}
+.event h4{
+
+font-family:'Cormorant Garamond';
+
+font-size:34px;
+
+margin-bottom:15px;
+
+color:#8b6b3f;
+
+}
+
+.footer{
+
+padding:90px 20px;
+
+text-align:center;
+
+}
+
+.footer h2{
+
+font-family:'Cormorant Garamond';
+
+font-size:48px;
+
+margin-bottom:20px;
+
+}
+
+.footer p{
+
+font-size:20px;
+
+line-height:1.8;
+
+}
+
+@media(max-width:900px){
+
+.card{
+
+grid-template-columns:1fr;
+
+padding:35px;
+
+}
+
+h1{
+
+font-size:52px;
+
+}
+
+}
 
 </style>
+
 </head>
 
 <body>
 
-<!-- BACKGROUND -->
-<div class="bg">
-    <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/IMG_2040.jpg?v=1781461384">
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="subtitle">
+
+Սիրով հրավիրում ենք
+
 </div>
 
-<div class="overlay"></div>
+<h1>
 
-<!-- HERO -->
-<section>
-    <div>
+Սուրբ Մկրտություն
 
-        <h1>Դուք հրավիրված եք</h1>
+</h1>
 
-        <p>
-            Ռոզի • Տեոնա • Արտյոմի Սուրբ Մկրտություն<br><br>
-            Մեր կյանքի ամենակարևոր օրը կիսելու համար սիրով հրավիրում ենք ձեզ
-        </p>
+<h2>
 
-        <a class="btn" href="#info">Դիտել մանրամասները ↓</a>
+Ռոզի • Թեոնա • Արտյոմ
 
-    </div>
-</section>
+</h2>
 
-<!-- INFO -->
-<section id="info">
+<div class="date">
 
-    <div class="card">
+17 Հուլիսի • 2026
 
-        <h2>17 ՀՈՒԼԻՍ 2026</h2>
+</div>
 
-        <!-- COUNTDOWN -->
-        <div class="countdown">
-
-            <div class="box"><span id="d"></span><small>Օր</small></div>
-            <div class="box"><span id="h"></span><small>Ժամ</small></div>
-            <div class="box"><span id="m"></span><small>Րոպե</small></div>
-            <div class="box"><span id="s"></span><small>Վայրկյան</small></div>
-
-        </div>
-
-        <hr style="margin:20px 0;opacity:0.2;">
-
-        <p>⛪ Սուրբ Հովհաննես Մկրտիչ — 15:00</p>
-        <p>🎉 Palladium Hall — 17:00</p>
-
-        <input id="name" placeholder="Ձեր անունը">
-
-        <div class="buttons">
-
-            <button class="yes" onclick="reply('Կգամ')">Կգամ</button>
-            <button class="no" onclick="reply('Չեմ կարող')">Չեմ կարող</button>
-
-        </div>
-
-        <p id="result" style="margin-top:15px;color:#6b5b52;"></p>
-
-    </div>
+</div>
 
 </section>
 
-<script>
+<div class="container">
 
-/* COUNTDOWN */
-const target = new Date("July 17, 2026 15:00:00").getTime();
+<div class="card">
 
-function update(){
+<div class="image">
 
-    let now = new Date().getTime();
-    let diff = target - now;
+<!-- Replace with your own PNG -->
 
-    document.getElementById("d").innerText = Math.floor(diff/(1000*60*60*24));
-    document.getElementById("h").innerText = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
-    document.getElementById("m").innerText = Math.floor((diff%(1000*60*60))/(1000*60));
-    document.getElementById("s").innerText = Math.floor((diff%(1000*60))/1000);
+<img src="images/church.png">
 
-}
+</div>
 
-setInterval(update,1000);
-update();
+<div class="info">
 
-/* RSVP */
-function reply(ans){
+<h3>
 
-    let name = document.getElementById("name").value;
+⛪ Սուրբ Մկրտություն
 
-    if(name === ""){
-        alert("Գրեք անունը");
-        return;
-    }
+</h3>
 
-    document.getElementById("result").innerText =
-        name + " → " + ans;
+<p>
 
-}
+Սիրով հրավիրում ենք Ձեզ ներկա գտնվելու
+Ռոզիի, Թեոնայի և Արտյոմի
+Սուրբ Մկրտության արարողությանը։
 
-</script>
+</p>
+
+<p>
+
+📅 17 Հուլիսի, 2026
+
+</p>
+
+<p>
+
+🕑 Ժամը՝ 14։00
+
+</p>
+
+<p>
+
+📍 Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)
+
+</p>
+
+<p>
+
+Հասցե՝
+
+Ռուսաստանի փողոց 12,
+Աբովյան 2204
+
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="info">
+
+<h3>
+
+🎉 Տոնական Ընդունելություն
+
+</h3>
+
+<p>
+
+Արարողությունից հետո սիրով հրավիրում ենք միասին շարունակելու
+այս հիշարժան օրը տոնական սեղանի շուրջ։
+
+</p>
+
+<p>
+
+🕔 Ժամը՝ 17։00
+
+</p>
+
+<p>
+
+📍 Bergamo Restaurant
+
+</p>
+
+<p>
+
+Հասցե՝
+
+Ջրվեժ 3-րդ թաղամաս,
+8/12,
+Ջրվեժ, Հայաստան
+
+</p>
+
+</div>
+
+<div class="image">
+
+<img src="images/restaurant.png">
+
+</div>
+
+</div>
+
+<div class="timeline">
+
+<div class="event">
+
+<h4>
+
+14։00
+
+</h4>
+
+<p>
+
+Սուրբ Մկրտության արարողություն
+
+</p>
+
+</div>
+
+<div class="event">
+
+<h4>
+
+17։00
+
+</h4>
+
+<p>
+
+Տոնական ընդունելություն
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<section class="footer">
+
+<h2>
+
+Հատուկ Օր
+
+</h2>
+
+<p>
+
+Այս օրը կրկնակի ուրախություն է մեզ համար,
+քանի որ Արտյոմը նշում է նաև իր առաջին տարեդարձը։
+
+</p>
+
+<br>
+
+<p>
+
+Սիրով կսպասենք Ձեր ներկայությանը,
+որպեսզի միասին կիսենք այս գեղեցիկ և հիշարժան օրը։
+
+</p>
+
+</section>
 
 </body>
 </html>
