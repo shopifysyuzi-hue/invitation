@@ -5,15 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Մկրտության հրավեր</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-    body {
+    * {
         margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
         font-family: "Cormorant Garamond", serif;
         background: #fbfaf8;
         color: #2b2b2b;
-        scroll-behavior: smooth;
     }
 
     /* HERO */
@@ -25,38 +33,44 @@
         text-align: center;
         flex-direction: column;
         background:
-        linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.7)),
-        url('https://images.unsplash.com/photo-1520975928311-4b3a2f1f2b3f?auto=format&fit=crop&w=1600&q=80');
+        linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.88)),
+        url("https://images.unsplash.com/photo-1520975928311-4b3a2f1f2b3f?auto=format&fit=crop&w=1600&q=80");
         background-size: cover;
         background-position: center;
+        padding: 20px;
     }
 
     .hero h1 {
         font-family: "Playfair Display", serif;
-        font-size: 52px;
+        font-size: 56px;
         letter-spacing: 2px;
-        margin: 0;
-        color: #2a2a2a;
+        margin-bottom: 10px;
     }
 
     .hero p {
         font-size: 20px;
-        margin-top: 10px;
-        color: #4a4a4a;
+        color: #555;
+        margin-top: 6px;
     }
 
     .date {
         margin-top: 10px;
         font-size: 18px;
         letter-spacing: 1px;
-        color: #6b6b6b;
+        color: #7a7a7a;
+    }
+
+    .line {
+        width: 90px;
+        height: 1px;
+        background: #cfc7bd;
+        margin: 20px 0;
     }
 
     .btn {
         margin-top: 30px;
         padding: 12px 28px;
         border: 1px solid #2b2b2b;
-        background: transparent;
         text-decoration: none;
         color: #2b2b2b;
         font-size: 16px;
@@ -65,12 +79,12 @@
 
     .btn:hover {
         background: #2b2b2b;
-        color: white;
+        color: #fff;
     }
 
     /* SECTIONS */
     section {
-        padding: 90px 20px;
+        padding: 110px 20px;
         max-width: 950px;
         margin: auto;
         text-align: center;
@@ -78,8 +92,8 @@
 
     h2 {
         font-family: "Playfair Display", serif;
-        font-size: 34px;
-        margin-bottom: 40px;
+        font-size: 38px;
+        margin-bottom: 55px;
         font-weight: 500;
     }
 
@@ -90,31 +104,37 @@
     }
 
     .card {
-        background: white;
-        border: 1px solid #eae6e1;
-        padding: 25px;
+        background: #fff;
+        border: 1px solid #e8e3dc;
+        padding: 30px;
         border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.04);
         transition: 0.3s;
     }
 
     .card:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
     }
 
-    .label {
+    .title {
+        font-size: 20px;
         font-weight: 600;
-        font-size: 18px;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
     }
 
     p {
         font-size: 18px;
-        color: #555;
         line-height: 1.6;
+        color: #555;
     }
 
     /* RSVP */
+    .form-card {
+        background: #fff;
+        border: 1px solid #e8e3dc;
+        padding: 30px;
+        border-radius: 12px;
+    }
+
     input, textarea {
         width: 100%;
         padding: 12px;
@@ -142,18 +162,11 @@
 
     .footer {
         text-align: center;
-        padding: 50px;
+        padding: 70px 20px;
         font-size: 14px;
-        color: #888;
+        color: #8a8a8a;
     }
 
-    /* subtle divider */
-    .line {
-        width: 80px;
-        height: 1px;
-        background: #cfc7bd;
-        margin: 20px auto;
-    }
 </style>
 </head>
 
@@ -165,37 +178,38 @@
     <div class="line"></div>
     <p>Ռոզի • Տեոնա • Արտյոմ</p>
     <div class="date">17 Հուլիսի 2026</div>
-    <a href="#details" class="btn">Տես մանրամասները</a>
+    <a href="#details" class="btn">Բացել մանրամասները</a>
 </div>
 
 <!-- DETAILS -->
 <section id="details">
+
     <h2>Միջոցառման մանրամասներ</h2>
 
     <div class="grid">
 
         <div class="card">
-            <div class="label">Մկրտություն</div>
+            <div class="title">Մկրտության արարողություն</div>
             <p>
-                Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)<br/>
-                12 Russia Street, Abovyan 2204<br/><br/>
-                📅 17.07.2026
+                Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)<br>
+                12 Russia Street, Abovyan 2204<br><br>
+                17.07.2026
             </p>
         </div>
 
         <div class="card">
-            <div class="label">Հանդիսություն</div>
+            <div class="title">Հանդիսավոր խնջույք</div>
             <p>
-                Bergamo ռեստորան<br/>
-                Ջրվեժ 3-րդ թաղամաս, 8/12, Հայաստան<br/><br/>
-                🕠 17:30
+                Bergamo ռեստորան<br>
+                Ջրվեժ 3-րդ թաղամաս, 8/12, Հայաստան<br><br>
+                17:30
             </p>
         </div>
 
         <div class="card">
-            <div class="label">Հատուկ առիթ</div>
+            <div class="title">Հատուկ առիթ</div>
             <p>
-                Ռոզի, Տեոնա և Արտյոմի մկրտություն<br/>
+                Ռոզի, Տեոնա և Արտյոմի մկրտություն<br>
                 Արտյոմի 1-ամյակի տոն 🎂
             </p>
         </div>
@@ -205,18 +219,19 @@
 
 <!-- RSVP -->
 <section>
+
     <h2>Հաստատում (RSVP)</h2>
 
-    <div class="card">
-        <form>
-            <input type="text" placeholder="Ձեր անունը"/>
-            <input type="text" placeholder="Մասնակցելու եք՞ (Այո / Ոչ)"/>
-            <textarea rows="4" placeholder="Ձեր մաղթանքը..."></textarea>
-            <button type="submit">Ուղարկել</button>
-        </form>
+    <div class="form-card">
+        <input type="text" placeholder="Ձեր անունը">
+        <input type="text" placeholder="Մասնակցելու եք՞ (Այո / Ոչ)">
+        <textarea rows="4" placeholder="Ձեր մաղթանքը..."></textarea>
+        <button>Ուղարկել</button>
     </div>
+
 </section>
 
+<!-- FOOTER -->
 <div class="footer">
     Սիրով հրավիրում ենք մեր մկրտության տոնին • 17.07.2026
 </div>
