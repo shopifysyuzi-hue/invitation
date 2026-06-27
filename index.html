@@ -10,7 +10,7 @@
 <style>
 body{
     margin:0;
-    background:#fbf7f2; /* NUDE TONE */
+    background:#fbf7f2;
     font-family:"Cormorant Garamond", serif;
     color:#2b2b2b;
 }
@@ -26,48 +26,34 @@ html{scroll-behavior:smooth;}
     flex-direction:column;
     text-align:center;
     background:
-    linear-gradient(rgba(251,247,242,0.6), rgba(251,247,242,0.9)),
+    linear-gradient(rgba(251,247,242,0.65), rgba(251,247,242,0.9)),
     url("https://images.unsplash.com/photo-1520975928311-4b3a2f1f2b3f?auto=format&fit=crop&w=1600&q=80");
     background-size:cover;
     background-position:center;
+    padding:20px;
 }
 
 .hero h1{
     font-family:"Playfair Display", serif;
-    font-size:58px;
+    font-size:60px;
     letter-spacing:3px;
 }
 
 .hero p{
     font-size:20px;
     color:#5a5a5a;
-}
-
-.date{
     margin-top:10px;
-    color:#7a7a7a;
-    letter-spacing:2px;
+    max-width:700px;
 }
 
-.line{
-    width:90px;
-    height:1px;
-    background:#cbbfb2;
-    margin:20px 0;
-}
-
-.btn{
-    margin-top:30px;
-    padding:12px 28px;
-    border:1px solid #2b2b2b;
-    text-decoration:none;
-    color:#2b2b2b;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#2b2b2b;
-    color:#fff;
+/* INTRO TEXT */
+.intro{
+    max-width:750px;
+    margin:80px auto 0;
+    text-align:center;
+    font-size:19px;
+    color:#666;
+    line-height:1.7;
 }
 
 /* SECTION */
@@ -81,11 +67,11 @@ section{
 h2{
     font-family:"Playfair Display", serif;
     font-size:38px;
-    margin-bottom:40px;
+    margin-bottom:50px;
     letter-spacing:2px;
 }
 
-/* CALENDAR FIRST */
+/* CALENDAR */
 .calendar{
     max-width:380px;
     margin:0 auto 80px;
@@ -112,15 +98,15 @@ h2{
     padding:8px;
     font-size:15px;
     color:#777;
-    border-radius:6px;
 }
 
 .highlight{
     background:#2b2b2b;
     color:#fff;
+    border-radius:6px;
 }
 
-/* BLOCKS */
+/* BLOCK */
 .block{
     margin-bottom:50px;
     border:1px solid #e8ddd2;
@@ -147,18 +133,41 @@ h2{
     margin-bottom:10px;
 }
 
-p{
-    font-size:18px;
-    color:#555;
-    line-height:1.6;
+/* RSVP */
+.rsvp{
+    background:#fff;
+    border:1px solid #e8ddd2;
+    border-radius:14px;
+    padding:30px;
+    max-width:600px;
+    margin:0 auto;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
-/* FOOTER */
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:16px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-family:inherit;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#2b2b2b;
+    color:#fff;
+    cursor:pointer;
+}
+
 .footer{
     text-align:center;
-    padding:60px 20px;
+    padding:70px 20px;
     font-size:14px;
-    color:#8b8b8b;
+    color:#888;
 }
 </style>
 </head>
@@ -168,18 +177,20 @@ p{
 <!-- HERO -->
 <div class="hero">
     <h1>ՄԿՐՏՈՒԹՅԱՆ ՀՐԱՎԵՐ</h1>
-    <div class="line"></div>
-    <p>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ</p>
-    <div class="date">17 ՀՈՒԼԻՍ 2026</div>
-    <a class="btn" href="#details">ՏԵՍ ՄԱՆՐԱՄԱՍՆԵՐԸ</a>
+    <p>Սիրով հրավիրում ենք Ձեզ մասնակցելու մեր ընտանիքի համար այս հատուկ և հիշարժան օրվան՝ Ռոզիի, Տեոնայի և Արտյոմի մկրտությանը, ինչպես նաև Արտյոմի 1-ամյակի տոնին։</p>
+</div>
+
+<!-- INTRO -->
+<div class="intro">
+    Ձեր ներկայությունը մեզ համար մեծ ուրախություն կլինի և կդարձնի այս օրը առավել հիշարժան և ջերմ։
 </div>
 
 <!-- DETAILS -->
-<section id="details">
+<section>
 
 <h2>ՄԻՋՈՑԱՌՄԱՆ ՕՐԱԿԱՐԳ</h2>
 
-<!-- CALENDAR FIRST -->
+<!-- CALENDAR -->
 <div class="calendar">
     <div class="month">ՀՈՒԼԻՍ 2026</div>
     <div class="days">
@@ -191,7 +202,7 @@ p{
     </div>
 </div>
 
-<!-- CHURCH (IMAGE 053) -->
+<!-- CHURCH -->
 <div class="block">
     <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-053.jpg?v=1782592300">
     <div class="content">
@@ -199,29 +210,40 @@ p{
         <p>
             Աբովյան<br>
             12 Russia Street, Abovyan<br><br>
-            ⏰ 14:00
+            14:00
         </p>
     </div>
 </div>
 
-<!-- RESTAURANT (IMAGE 307) -->
+<!-- RESTAURANT -->
 <div class="block">
     <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-307.jpg?v=1782592300">
     <div class="content">
         <div class="title">BERGAMO</div>
         <p>
-            Ջրվեժ 3-րդ թաղամաս, 8/12<br>
-            Հայաստան<br><br>
-            ⏰ 17:30
+            Ջրվեժ 3-րդ թաղամաս, 8/12<br><br>
+            17:30
         </p>
     </div>
 </div>
 
 </section>
 
-<!-- FOOTER -->
+<!-- RSVP -->
+<section>
+<h2>ՀԱՍՏԱՏՈՒՄ (RSVP)</h2>
+
+<div class="rsvp">
+    <input type="text" placeholder="Անուն և ազգանուն">
+    <input type="number" placeholder="Հյուրերի քանակ">
+    <textarea rows="4" placeholder="Մասնակիցների անուններ / հաղորդագրություն"></textarea>
+    <button>Ուղարկել</button>
+</div>
+
+</section>
+
 <div class="footer">
-ՍԻՐՈՎ ՀՐԱՎԻՐՈՒՄ ԵՆՔ ՄԵՐ ՄԿՐՏՈՒԹՅԱՆ ՏՈՆԻՆ • 17.07.2026
+Սիրով հրավիրում ենք • 17.07.2026
 </div>
 
 </body>
