@@ -5,170 +5,161 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Մկրտության հրավեր</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+body{
+    margin:0;
+    background:#fbf7f2; /* NUDE TONE */
+    font-family:"Cormorant Garamond", serif;
+    color:#2b2b2b;
+}
 
-    html {
-        scroll-behavior: smooth;
-    }
+html{scroll-behavior:smooth;}
 
-    body {
-        font-family: "Cormorant Garamond", serif;
-        background: #fbfaf8;
-        color: #2b2b2b;
-    }
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    text-align:center;
+    background:
+    linear-gradient(rgba(251,247,242,0.6), rgba(251,247,242,0.9)),
+    url("https://images.unsplash.com/photo-1520975928311-4b3a2f1f2b3f?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+}
 
-    /* HERO */
-    .hero {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        background:
-        linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.88)),
-        url("https://images.unsplash.com/photo-1520975928311-4b3a2f1f2b3f?auto=format&fit=crop&w=1600&q=80");
-        background-size: cover;
-        background-position: center;
-        padding: 20px;
-    }
+.hero h1{
+    font-family:"Playfair Display", serif;
+    font-size:58px;
+    letter-spacing:3px;
+}
 
-    .hero h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 56px;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-    }
+.hero p{
+    font-size:20px;
+    color:#5a5a5a;
+}
 
-    .hero p {
-        font-size: 20px;
-        color: #555;
-        margin-top: 6px;
-    }
+.date{
+    margin-top:10px;
+    color:#7a7a7a;
+    letter-spacing:2px;
+}
 
-    .date {
-        margin-top: 10px;
-        font-size: 18px;
-        letter-spacing: 1px;
-        color: #7a7a7a;
-    }
+.line{
+    width:90px;
+    height:1px;
+    background:#cbbfb2;
+    margin:20px 0;
+}
 
-    .line {
-        width: 90px;
-        height: 1px;
-        background: #cfc7bd;
-        margin: 20px 0;
-    }
+.btn{
+    margin-top:30px;
+    padding:12px 28px;
+    border:1px solid #2b2b2b;
+    text-decoration:none;
+    color:#2b2b2b;
+    transition:0.3s;
+}
 
-    .btn {
-        margin-top: 30px;
-        padding: 12px 28px;
-        border: 1px solid #2b2b2b;
-        text-decoration: none;
-        color: #2b2b2b;
-        font-size: 16px;
-        transition: 0.3s;
-    }
+.btn:hover{
+    background:#2b2b2b;
+    color:#fff;
+}
 
-    .btn:hover {
-        background: #2b2b2b;
-        color: #fff;
-    }
+/* SECTION */
+section{
+    padding:100px 20px;
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+}
 
-    section {
-        padding: 110px 20px;
-        max-width: 950px;
-        margin: auto;
-        text-align: center;
-    }
+h2{
+    font-family:"Playfair Display", serif;
+    font-size:38px;
+    margin-bottom:40px;
+    letter-spacing:2px;
+}
 
-    h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 38px;
-        margin-bottom: 55px;
-        font-weight: 500;
-    }
+/* CALENDAR FIRST */
+.calendar{
+    max-width:380px;
+    margin:0 auto 80px;
+    background:#fff;
+    border:1px solid #e8ddd2;
+    border-radius:14px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
 
-    /* IMAGE CARDS */
-    .image-card {
-        margin-bottom: 40px;
-        border-radius: 14px;
-        overflow: hidden;
-        border: 1px solid #e8e3dc;
-        background: white;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    }
+.month{
+    font-family:"Playfair Display", serif;
+    font-size:22px;
+    margin-bottom:15px;
+}
 
-    .image-card img {
-        width: 100%;
-        height: 320px;
-        object-fit: cover;
-        display: block;
-    }
+.days{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:6px;
+}
 
-    .image-card .content {
-        padding: 25px;
-    }
+.day{
+    padding:8px;
+    font-size:15px;
+    color:#777;
+    border-radius:6px;
+}
 
-    .title {
-        font-size: 22px;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
+.highlight{
+    background:#2b2b2b;
+    color:#fff;
+}
 
-    p {
-        font-size: 18px;
-        line-height: 1.6;
-        color: #555;
-    }
+/* BLOCKS */
+.block{
+    margin-bottom:50px;
+    border:1px solid #e8ddd2;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.04);
+}
 
-    /* RSVP */
-    .form-card {
-        background: #fff;
-        border: 1px solid #e8e3dc;
-        padding: 30px;
-        border-radius: 12px;
-    }
+.block img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+}
 
-    input, textarea {
-        width: 100%;
-        padding: 12px;
-        margin-top: 10px;
-        margin-bottom: 18px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        font-family: inherit;
-    }
+.content{
+    padding:28px;
+}
 
-    button {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        background: #2b2b2b;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        border-radius: 8px;
-    }
+.title{
+    font-family:"Playfair Display", serif;
+    font-size:22px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
 
-    button:hover {
-        background: #444;
-    }
+p{
+    font-size:18px;
+    color:#555;
+    line-height:1.6;
+}
 
-    .footer {
-        text-align: center;
-        padding: 70px 20px;
-        font-size: 14px;
-        color: #8a8a8a;
-    }
-
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:60px 20px;
+    font-size:14px;
+    color:#8b8b8b;
+}
 </style>
 </head>
 
@@ -176,74 +167,61 @@
 
 <!-- HERO -->
 <div class="hero">
-    <h1>Մկրտության հրավեր</h1>
+    <h1>ՄԿՐՏՈՒԹՅԱՆ ՀՐԱՎԵՐ</h1>
     <div class="line"></div>
-    <p>Ռոզի • Տեոնա • Արտյոմ</p>
-    <div class="date">17 Հուլիսի 2026</div>
-    <a href="#details" class="btn">Բացել մանրամասները</a>
+    <p>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ</p>
+    <div class="date">17 ՀՈՒԼԻՍ 2026</div>
+    <a class="btn" href="#details">ՏԵՍ ՄԱՆՐԱՄԱՍՆԵՐԸ</a>
 </div>
 
 <!-- DETAILS -->
 <section id="details">
 
-    <h2>Միջոցառման ընթացքը</h2>
+<h2>ՄԻՋՈՑԱՌՄԱՆ ՕՐԱԿԱՐԳ</h2>
 
-    <!-- CHURCH -->
-    <div class="image-card">
-        <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-307.jpg?v=1782592300" />
-        <div class="content">
-            <div class="title">Մկրտության արարողություն</div>
-            <p>
-                Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)<br>
-                12 Russia Street, Abovyan 2204<br><br>
-                17.07.2026
-            </p>
-        </div>
+<!-- CALENDAR FIRST -->
+<div class="calendar">
+    <div class="month">ՀՈՒԼԻՍ 2026</div>
+    <div class="days">
+        <div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day">7</div>
+        <div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div>
+        <div class="day">15</div><div class="day">16</div><div class="day highlight">17</div><div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div>
+        <div class="day">22</div><div class="day">23</div><div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div>
+        <div class="day">29</div><div class="day">30</div><div class="day">31</div>
     </div>
+</div>
 
-    <!-- RESTAURANT -->
-    <div class="image-card">
-        <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-053.jpg?v=1782592300" />
-        <div class="content">
-            <div class="title">Տոնական խնջույք</div>
-            <p>
-                Bergamo ռեստորան<br>
-                Ջրվեժ 3-րդ թաղամաս, 8/12, Հայաստան<br><br>
-                17:30
-            </p>
-        </div>
+<!-- CHURCH (IMAGE 053) -->
+<div class="block">
+    <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-053.jpg?v=1782592300">
+    <div class="content">
+        <div class="title">ՍՈՒՐԲ ՀՈՎՀԱՆՆԵՍ ՄԿՐՏԻՉ ԵԿԵՂԵՑԻ</div>
+        <p>
+            Աբովյան<br>
+            12 Russia Street, Abovyan<br><br>
+            ⏰ 14:00
+        </p>
     </div>
+</div>
 
-    <!-- SPECIAL -->
-    <div class="image-card">
-        <div class="content">
-            <div class="title">Հատուկ առիթ</div>
-            <p>
-                Ռոզի, Տեոնա և Արտյոմի մկրտություն<br>
-                Արտյոմի 1-ամյակի տոն 🎂
-            </p>
-        </div>
+<!-- RESTAURANT (IMAGE 307) -->
+<div class="block">
+    <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-307.jpg?v=1782592300">
+    <div class="content">
+        <div class="title">BERGAMO</div>
+        <p>
+            Ջրվեժ 3-րդ թաղամաս, 8/12<br>
+            Հայաստան<br><br>
+            ⏰ 17:30
+        </p>
     </div>
-
-</section>
-
-<!-- RSVP -->
-<section>
-
-    <h2>Հաստատում (RSVP)</h2>
-
-    <div class="form-card">
-        <input type="text" placeholder="Ձեր անունը">
-        <input type="text" placeholder="Մասնակցելու եք՞ (Այո / Ոչ)">
-        <textarea rows="4" placeholder="Ձեր մաղթանքը..."></textarea>
-        <button>Ուղարկել</button>
-    </div>
+</div>
 
 </section>
 
 <!-- FOOTER -->
 <div class="footer">
-    Սիրով հրավիրում ենք մեր մկրտության տոնին • 17.07.2026
+ՍԻՐՈՎ ՀՐԱՎԻՐՈՒՄ ԵՆՔ ՄԵՐ ՄԿՐՏՈՒԹՅԱՆ ՏՈՆԻՆ • 17.07.2026
 </div>
 
 </body>
