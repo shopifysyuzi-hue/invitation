@@ -1,259 +1,820 @@
 <!DOCTYPE html>
 <html lang="hy">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Մկրտության հրավեր</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
 body{
-    margin:0;
-    font-family:"Cormorant Garamond", serif;
-    background:#fbf7f2;
-    color:#2b2b2b;
+
+background:#F8F3EE;
+color:#4E443E;
+font-family:'Cormorant Garamond',serif;
+overflow-x:hidden;
+
 }
 
-html{scroll-behavior:smooth;}
+body::before{
 
-/* OPENING */
-.opening{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    flex-direction:column;
-    background:
-    linear-gradient(rgba(251,247,242,0.7), rgba(251,247,242,0.95)),
-    url("https://images.unsplash.com/photo-1520975928311-4b3a2f1f2b3f?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
-    padding:20px;
+content:"";
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+background:
+
+radial-gradient(circle at top left,#F6ECE5 0%,transparent 40%),
+radial-gradient(circle at bottom right,#EFE2D7 0%,transparent 35%),
+linear-gradient(#FCFAF7,#F8F3EE);
+
+z-index:-5;
+
 }
 
-.opening h1{
-    font-family:"Playfair Display", serif;
-    font-size:48px;
-    letter-spacing:2px;
+/* HERO */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:30px;
+
+position:relative;
+
 }
 
-.opening p{
-    font-size:18px;
-    margin-top:10px;
-    color:#5a5a5a;
-    max-width:320px;
+.hero-content{
+
+max-width:700px;
+
+animation:fade 2s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+.quote{
+
+font-size:28px;
+
+line-height:1.7;
+
+color:#6C5B52;
+
+font-weight:300;
+
+margin-bottom:55px;
+
+}
+
+.line{
+
+width:90px;
+
+height:1px;
+
+background:#C8B6A6;
+
+margin:30px auto;
+
+}
+
+.invitation{
+
+font-family:'Playfair Display',serif;
+
+font-size:22px;
+
+letter-spacing:6px;
+
+color:#8B7664;
+
+margin-bottom:18px;
+
+text-transform:uppercase;
+
+}
+
+.names{
+
+font-family:'Playfair Display',serif;
+
+font-size:56px;
+
+line-height:1.25;
+
+color:#57473D;
+
+margin-bottom:18px;
+
+}
+
+.subtitle{
+
+font-size:30px;
+
+letter-spacing:3px;
+
+margin-bottom:55px;
+
+color:#7A665A;
+
 }
 
 .open-btn{
-    margin-top:30px;
-    padding:12px 28px;
-    border:1px solid #2b2b2b;
-    text-decoration:none;
-    color:#2b2b2b;
-    font-size:14px;
-    letter-spacing:1px;
+
+display:inline-block;
+
+padding:16px 48px;
+
+border-radius:50px;
+
+background:#B89C82;
+
+color:white;
+
+text-decoration:none;
+
+letter-spacing:2px;
+
+font-size:17px;
+
+transition:.35s;
+
+box-shadow:0 10px 30px rgba(0,0,0,.12);
+
 }
 
-/* SECTION */
+.open-btn:hover{
+
+background:#A98B72;
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+/* floating circles */
+
+.circle1{
+
+position:absolute;
+
+width:320px;
+
+height:320px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.45);
+
+top:-120px;
+
+left:-120px;
+
+filter:blur(20px);
+
+}
+
+.circle2{
+
+position:absolute;
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+background:#EFE1D6;
+
+bottom:-120px;
+
+right:-100px;
+
+filter:blur(15px);
+
+}
+
 section{
-    padding:80px 18px;
-    max-width:900px;
-    margin:auto;
-    text-align:center;
+
+padding:90px 22px;
+
+max-width:900px;
+
+margin:auto;
+
 }
 
 h2{
-    font-family:"Playfair Display", serif;
-    font-size:32px;
-    margin-bottom:35px;
+
+font-family:'Playfair Display',serif;
+
+font-size:42px;
+
+font-weight:500;
+
+margin-bottom:45px;
+
+color:#5B4A40;
+
+text-align:center;
+
 }
 
-/* CALENDAR */
 .calendar{
-    max-width:340px;
-    margin:0 auto 70px;
-    background:#fff;
-    border:1px solid #e8ddd2;
-    border-radius:14px;
-    padding:18px;
+
+background:white;
+
+border-radius:22px;
+
+padding:35px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.07);
+
+margin-top:30px;
+
 }
 
-.month{
-    font-size:20px;
-    margin-bottom:10px;
-    font-family:"Playfair Display", serif;
-}
-
-.days{
-    display:grid;
-    grid-template-columns:repeat(7,1fr);
-    gap:5px;
-    font-size:14px;
-}
-
-.day{
-    padding:7px;
-    color:#777;
-}
-
-.highlight{
-    background:#2b2b2b;
-    color:#fff;
-    border-radius:6px;
-}
-
-/* CARD */
-.card{
-    background:#fff;
-    border:1px solid #e8ddd2;
-    border-radius:14px;
-    overflow:hidden;
-    margin-bottom:35px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.04);
-}
-
-.card img{
-    width:100%;
-    height:240px;
-    object-fit:cover;
-}
-
-.content{
-    padding:20px;
-}
-
-.title{
-    font-family:"Playfair Display", serif;
-    font-size:20px;
-    margin-bottom:8px;
-}
-
-p{
-    font-size:16px;
-    color:#555;
-    line-height:1.5;
-}
-
-/* MAP BUTTON */
-.map-btn{
-    display:inline-block;
-    margin-top:12px;
-    padding:10px 14px;
-    border:1px solid #2b2b2b;
-    text-decoration:none;
-    color:#2b2b2b;
-    font-size:13px;
-}
-
-/* RSVP */
-.rsvp{
-    background:#fff;
-    border:1px solid #e8ddd2;
-    border-radius:14px;
-    padding:20px;
-}
-
-input, textarea{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border:1px solid #ddd;
-    border-radius:8px;
-    font-family:inherit;
-}
-
-button{
-    width:100%;
-    padding:12px;
-    border:none;
-    background:#2b2b2b;
-    color:#fff;
-}
-
-/* FOOTER */
-.footer{
-    text-align:center;
-    padding:50px 15px;
-    font-size:13px;
-    color:#888;
-}
 </style>
+
 </head>
 
 <body>
 
-<!-- OPENING -->
-<div class="opening">
-    <h1>ՄԿՐՏՈՒԹՅԱՆ ՀՐԱՎԵՐ</h1>
-    <p>ՌՈԶԻ • ՏԵՈՆԱ • ԱՐՏՅՈՄ<br>17 ՀՈՒԼԻՍ 2026</p>
-    <a class="open-btn" href="#content">ԲԱՑԵԼ ՀՐԱՎԵՐԸ</a>
+<div class="hero">
+
+<div class="circle1"></div>
+
+<div class="circle2"></div>
+
+<div class="hero-content">
+
+<div class="quote">
+
+Յուրաքանչյուր կարևոր պահ սկսվում է Աստծո օրհնությամբ,<br>
+
+իսկ ամենաթանկ հիշողությունները կիսվում են սիրելի մարդկանց հետ։
+
 </div>
 
-<!-- CONTENT -->
-<section id="content">
+<div class="line"></div>
 
-<h2>2026 ՀՈՒԼԻՍ</h2>
+<div class="invitation">
 
-<!-- CALENDAR -->
+ՍԻՐՈՎ ՀՐԱՎԻՐՈՒՄ ԵՆՔ
+
+</div>
+
+<div class="names">
+
+ՌՈԶԻԻ,<br>
+
+ՏԵՈՆԱՅԻ ԵՎ<br>
+
+ԱՐՏՅՈՄԻ
+
+</div>
+
+<div class="subtitle">
+
+ՍՈՒՐԲ ՄԿՐՏՈՒԹՅԱՆԸ
+
+</div>
+
+<a href="#calendar" class="open-btn" onclick="document.getElementById('music').play()">
+
+ԲԱՑԵԼ ՀՐԱՎԵՐԸ
+
+</a>
+
+<audio id="music" loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
+</audio>
+
+</div>
+
+</div>
+
+<section id="calendar">
+
+<h2>
+
+17 ՀՈՒԼԻՍ • 2026
+
+</h2>
+
 <div class="calendar">
-    <div class="month">ՀՈՒԼԻՍ</div>
-    <div class="days">
-        <div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div><div class="day">6</div><div class="day">7</div>
-        <div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div><div class="day">13</div><div class="day">14</div>
-        <div class="day">15</div><div class="day">16</div><div class="day highlight">17</div><div class="day">18</div><div class="day">19</div><div class="day">20</div><div class="day">21</div>
-        <div class="day">22</div><div class="day">23</div><div class="day">24</div><div class="day">25</div><div class="day">26</div><div class="day">27</div><div class="day">28</div>
-        <div class="day">29</div><div class="day">30</div><div class="day">31</div>
-    </div>
+    <div class="month">
+
+ՀՈՒԼԻՍ 2026
+
 </div>
 
-<!-- CHURCH -->
-<div class="card">
-    <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-053.jpg?v=1782592300">
-    <div class="content">
-        <div class="title">ՍՈՒՐԲ ՀՈՎՀԱՆՆԵՍ ՄԿՐՏԻՉ ԵԿԵՂԵՑԻ</div>
-        <p>
-            Աբովյան<br>
-            12 Russia Street, Abovyan<br><br>
-            14:00
-        </p>
-        <a class="map-btn" href="https://www.google.com/maps/place/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C+%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE+%D0%98%D0%BE%D0%B0%D0%BD%D0%BD%D0%B0+%D0%9A%D1%80%D0%B5%D1%81%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8F/data=!4m2!3m1!1s0x0:0xd8c583e01d008291?sa=X&ved=1t:2428&ictx=111" target="_blank">
-        OPEN IN MAP
-        </a>
-    </div>
+<div class="weekdays">
+
+<div>ԵԿ</div>
+<div>ԵՐԿ</div>
+<div>ԵՔ</div>
+<div>ՀՆԳ</div>
+<div>ՈՒՐ</div>
+<div>ՇԲ</div>
+<div>ԿԻՐ</div>
+
 </div>
 
-<!-- RESTAURANT -->
-<div class="card">
-    <img src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-307.jpg?v=1782592300">
-    <div class="content">
-        <div class="title">BERGAMO</div>
-        <p>
-            Ջրվեժ 3-րդ թաղամաս, 8/12<br>
-            17:30
-        </p>
-        <a class="map-btn" href="https://www.google.com/maps/place/Bergamo+Restaurant/data=!4m2!3m1!1s0x0:0xd924f9cadb04fa28?sa=X&ved=1t:2428&ictx=111" target="_blank">
-        OPEN IN MAP
-        </a>
-    </div>
+<div class="days">
+
+<div></div>
+<div></div>
+<div></div>
+
+<div class="day">1</div>
+<div class="day">2</div>
+<div class="day">3</div>
+<div class="day">4</div>
+
+<div class="day">5</div>
+<div class="day">6</div>
+<div class="day">7</div>
+<div class="day">8</div>
+<div class="day">9</div>
+<div class="day">10</div>
+<div class="day">11</div>
+
+<div class="day">12</div>
+<div class="day">13</div>
+<div class="day">14</div>
+<div class="day">15</div>
+<div class="day">16</div>
+
+<div class="day selected">
+
+17
+
 </div>
 
-<!-- RSVP -->
-<h2>ՀԱՍՏԱՏՈՒՄ</h2>
+<div class="day">18</div>
 
-<div class="rsvp">
-    <input type="text" placeholder="Անուն և ազգանուն">
-    <input type="number" placeholder="Հյուրերի քանակ">
-    <textarea rows="4" placeholder="Հյուրերի անուններ / հաղորդագրություն"></textarea>
-    <button>ՈւՂԱՐԿԵԼ</button>
+<div class="day">19</div>
+<div class="day">20</div>
+<div class="day">21</div>
+<div class="day">22</div>
+<div class="day">23</div>
+<div class="day">24</div>
+<div class="day">25</div>
+
+<div class="day">26</div>
+<div class="day">27</div>
+<div class="day">28</div>
+<div class="day">29</div>
+<div class="day">30</div>
+<div class="day">31</div>
+
 </div>
+
+</div>
+
+<div style="height:90px"></div>
+
+<div style="text-align:center">
+
+<p style="
+
+font-size:26px;
+
+letter-spacing:2px;
+
+color:#9B8572;
+
+font-family:'Playfair Display';
+
+">
+
+ՄԵՆՔ ՍՊԱՍՈՒՄ ԵՆՔ ՁԵԶ
+
+</p>
+
+<p style="
+
+margin-top:25px;
+
+font-size:21px;
+
+line-height:1.8;
+
+max-width:650px;
+
+margin-inline:auto;
+
+color:#6C5B52;
+
+">
+
+Մեր կյանքի ամենալուսավոր և ամենահիշարժան օրը
+ցանկանում ենք կիսել հենց Ձեզ հետ։
+
+Ձեր ներկայությունը կլինի մեր ամենաթանկ նվերը։
+
+</p>
+
+</div>
+
+<div style="height:100px"></div>
+
+<section class="church">
+
+<img
+
+src="https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-053.jpg?v=1782592300"
+
+style="
+
+width:100%;
+
+border-radius:28px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.08);
+
+"
+
+>
+
+<div style="height:40px"></div>
+
+<h2>
+
+ՍՈՒՐԲ ՀՈՎՀԱՆՆԵՍ ՄԿՐՏԻՉ ԵԿԵՂԵՑԻ
+
+</h2>
+
+<p style="
+
+font-size:22px;
+
+line-height:2;
+
+text-align:center;
+
+">
+
+ԱԲՈՎՅԱՆ
+
+<br><br>
+
+12 Russia Street
+
+<br><br>
+
+14:00
+
+</p>
+
+<br>
+
+<a
+
+href="https://google.com/maps/place/Церковь+Святого+Иоанна+Крестителя/data=!4m2!3m1!1s0x0:0xd8c583e01d008291?sa=X&ved=1t:2428&ictx=111"
+
+target="_blank"
+
+class="open-btn"
+
+>
+
+ԲԱՑԵԼ ՔԱՐՏԵԶԸ
+
+</a>
 
 </section>
+<style>
 
-<div class="footer">
-Սիրով հրավիրում ենք մեր մկրտության տոնին • 17.07.2026
-</div>
+/* CALENDAR */
 
-</body>
-</html>
+.month{
+font-family:'Playfair Display',serif;
+font-size:32px;
+text-align:center;
+margin-bottom:35px;
+letter-spacing:4px;
+color:#8B7664;
+}
+
+.weekdays{
+
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:12px;
+margin-bottom:18px;
+
+}
+
+.weekdays div{
+
+text-align:center;
+font-size:18px;
+color:#B0937C;
+font-weight:600;
+
+}
+
+.days{
+
+display:grid;
+grid-template-columns:repeat(7,1fr);
+gap:12px;
+
+}
+
+.day{
+
+height:56px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:#FFFDFB;
+
+border-radius:18px;
+
+font-size:20px;
+
+color:#6D5C50;
+
+transition:.3s;
+
+}
+
+.day:hover{
+
+background:#EFE2D7;
+
+transform:translateY(-3px);
+
+}
+
+.selected{
+
+background:linear-gradient(135deg,#D7BFA9,#C9A68A);
+
+color:white;
+
+font-weight:bold;
+
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+/* CHURCH */
+
+.church{
+
+margin-top:60px;
+
+background:white;
+
+padding:28px;
+
+border-radius:35px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.07);
+
+}
+
+.church img{
+
+transition:.45s;
+
+}
+
+.church img:hover{
+
+transform:scale(1.02);
+
+}
+
+.map{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:15px 38px;
+
+border-radius:50px;
+
+background:#B89C82;
+
+color:white;
+
+text-decoration:none;
+
+letter-spacing:2px;
+
+transition:.35s;
+
+}
+
+.map:hover{
+
+background:#A98B72;
+
+}
+
+.restaurant{
+
+margin-top:90px;
+
+background:white;
+
+padding:28px;
+
+border-radius:35px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.07);
+
+}
+
+.rsvp{
+
+margin-top:90px;
+
+background:white;
+
+padding:40px;
+
+border-radius:35px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.07);
+
+}
+
+.rsvp input,
+.rsvp textarea{
+
+width:100%;
+
+padding:18px;
+
+margin-top:18px;
+
+border:none;
+
+background:#F8F3EE;
+
+border-radius:18px;
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:20px;
+
+}
+
+.rsvp button{
+
+margin-top:20px;
+
+width:100%;
+
+padding:18px;
+
+border:none;
+
+border-radius:50px;
+
+background:#B89C82;
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.rsvp button:hover{
+
+background:#A98B72;
+
+transform:translateY(-2px);
+
+}
+
+.footer{
+
+padding:80px 20px;
+
+text-align:center;
+
+color:#8B7664;
+
+font-size:20px;
+
+line-height:2;
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+padding:22px;
+
+}
+
+.quote{
+
+font-size:22px;
+
+}
+
+.names{
+
+font-size:42px;
+
+}
+
+.subtitle{
+
+font-size:24px;
+
+}
+
+h2{
+
+font-size:30px;
+
+}
+
+.day{
+
+height:45px;
+
+font-size:16px;
+
+}
+
+.month{
+
+font-size:26px;
+
+}
+
+}
+
+</style>
