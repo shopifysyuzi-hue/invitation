@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Սուրբ Մկրտություն</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Noto+Sans+Armenian:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:linear-gradient(#fffefc,#f7f2ea,#fff);
+font-family:'Noto Sans Armenian',sans-serif;
+color:#8a6b39;
+overflow-x:hidden;
+}
+
+header{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+background:
+radial-gradient(circle at top,#ffffff 10%,#f9f6ef 60%,#efe7da);
+position:relative;
+overflow:hidden;
+}
+
+.cloud{
+position:absolute;
+background:white;
+opacity:.45;
+border-radius:100px;
+filter:blur(8px);
+animation:float 18s infinite linear;
+}
+
+.cloud:nth-child(1){
+width:220px;
+height:70px;
+top:90px;
+left:-220px;
+}
+
+.cloud:nth-child(2){
+width:280px;
+height:90px;
+bottom:120px;
+right:-260px;
+animation-duration:24s;
+}
+
+@keyframes float{
+to{
+transform:translateX(160vw);
+}
+}
+
+h1{
+font-family:'Cormorant Garamond',serif;
+font-size:60px;
+margin-bottom:20px;
+color:#b89452;
+}
+
+.subtitle{
+font-size:22px;
+line-height:1.8;
+max-width:700px;
+margin:auto;
+}
+
+.section{
+padding:80px 25px;
+text-align:center;
+max-width:900px;
+margin:auto;
+}
+
+.section h2{
+font-family:'Cormorant Garamond',serif;
+font-size:42px;
+margin-bottom:25px;
+color:#b89452;
+}
+
+.card{
+background:white;
+border-radius:25px;
+padding:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+margin-top:30px;
+}
+
+.icon{
+font-size:42px;
+margin-bottom:20px;
+}
+
+.info{
+font-size:21px;
+line-height:2;
+}
+
+.quote{
+font-style:italic;
+font-size:24px;
+line-height:1.8;
+color:#92723d;
+}
+
+.button{
+display:inline-block;
+margin-top:35px;
+padding:18px 40px;
+background:#d7ba7d;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-size:18px;
+transition:.3s;
+}
+
+.button:hover{
+background:#c6a867;
+}
+
+footer{
+padding:70px 20px;
+text-align:center;
+font-size:20px;
+color:#9b7a44;
+}
+
+.angels{
+font-size:65px;
+margin:25px 0;
+animation:updown 4s infinite;
+}
+
+@keyframes updown{
+50%{
+transform:translateY(-10px);
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="cloud"></div>
+<div class="cloud"></div>
+
+<div>
+
+<div style="font-size:70px;">🕊️</div>
+
+<h1>Սուրբ Մկրտություն</h1>
+
+<div class="subtitle">
+
+Սիրով հրավիրում ենք Ձեզ կիսելու մեր երեխաների կյանքի
+ամենալուսավոր և օրհնված օրը։
+
+</div>
+
+<div class="angels">
+👼 👼 👼
+</div>
+
+<a href="#info" class="button">Բացել հրավերը</a>
+
+</div>
+
+</header>
+
+<section class="section" id="info">
+
+<h2>Մկրտության արարողություն</h2>
+
+<div class="card">
+
+<div class="icon">⛪</div>
+
+<div class="info">
+
+<strong>17 հուլիսի 2026</strong><br><br>
+
+🕑 14:00<br><br>
+
+📍 Ք. Աբովյան<br>
+
+Սբ. Հովհաննես Մկրտիչ եկեղեցի
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Տոնական ընդունելություն</h2>
+
+<div class="card">
+
+<div class="icon">🥂</div>
+
+<div class="info">
+
+<strong>Բերգամո ռեստորան</strong><br><br>
+
+17:00 – 17:30
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🤍</h2>
+
+<div class="quote">
+
+«Թող Աստծո օրհնությունն ու սերը
+միշտ ուղեկցեն մեր երեխաներին,
+իսկ այս օրը հավերժ մնա մեր սրտերում»։
+
+</div>
+
+<a class="button"
+href="https://wa.me/XXXXXXXXXXX?text=Բարև։%20Ուրախությամբ%20կհաստատենք%20մեր%20մասնակցությունը։">
+
+Հաստատել մասնակցությունը
+
+</a>
+
+</section>
+
+<footer>
+
+Սիրով սպասում ենք Ձեզ 🤍<br><br>
+
+Բաղդաղուլյանների ընտանիք
+
+</footer>
+
+</body>
+</html>
