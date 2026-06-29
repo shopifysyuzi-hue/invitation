@@ -3,115 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ռոզի, Տեոնա և Արտյոմի Սուրբ Մկրտություն</title>
+    <title>Ռոզիի, Տեոնայի և Արտյոմի Սուրբ Մկրտություն</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap');
         
         :root {
             --gold: #d4af37;
             --soft-cream: #f8f1e9;
-            --deep-cream: #e8d9c9;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(180deg, #f8f1e9 0%, #e8d9c9 100%);
             color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
         }
         
         .header {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), url('https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-053.jpg?v=1782592300') center/cover no-repeat;
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), 
+                        url('https://cdn.shopify.com/s/files/1/0732/2163/6185/files/viber_image_2026-06-28_00-30-37-053.jpg?v=1782592300') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            position: relative;
             color: white;
         }
         
-        .header-content {
-            max-width: 800px;
-            padding: 0 20px;
-            z-index: 2;
-        }
-        
-        .header h1 {
+        .header-content h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.2rem;
-            margin-bottom: 20px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
-        }
-        
-        .header .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            opacity: 0.95;
+            margin-bottom: 15px;
         }
         
         .open-invitation {
             display: inline-block;
             padding: 16px 40px;
-            background: rgba(212, 175, 55, 0.9);
+            background: rgba(212, 175, 55, 0.95);
             color: #222;
             font-weight: bold;
-            font-size: 1.1rem;
             border-radius: 50px;
             text-decoration: none;
-            transition: all 0.3s;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            margin-top: 30px;
+            font-size: 1.15rem;
         }
         
-        .open-invitation:hover {
-            transform: translateY(-5px);
-            background: #d4af37;
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
+        .calendar {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+            margin: 40px auto;
+            max-width: 700px;
+            text-align: center;
         }
         
-        .section {
-            padding: 80px 20px;
-            max-width: 900px;
+        .calendar h3 {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
             margin: 0 auto;
         }
         
-        .quote {
+        th, td {
+            padding: 12px 8px;
             text-align: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.45rem;
-            font-style: italic;
-            color: #444;
-            padding: 60px 30px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            margin: 40px auto;
-            max-width: 800px;
+            font-size: 1.1rem;
         }
+        
+        th {
+            color: #d4af37;
+            font-weight: 500;
+        }
+        
+        td {
+            border-radius: 50%;
+        }
+        
+        .highlight {
+            background: #ffebee;
+            color: #e91e63;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .highlight::after {
+            content: "❤️";
+            position: absolute;
+            font-size: 1.1rem;
+            bottom: -4px;
+            right: -4px;
+        }
+        
+        .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; }
         
         .title {
             text-align: center;
             font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
             color: #222;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--gold);
-            margin: 15px auto;
         }
         
         .card {
@@ -123,13 +121,6 @@
             text-align: center;
         }
         
-        .event-time {
-            font-size: 1.8rem;
-            color: var(--gold);
-            font-weight: bold;
-            margin: 15px 0;
-        }
-        
         .map-btn {
             display: inline-block;
             margin-top: 20px;
@@ -139,44 +130,16 @@
             text-decoration: none;
             border-radius: 50px;
             font-weight: bold;
-            transition: all 0.3s;
         }
         
-        .map-btn:hover {
-            background: #20b958;
-            transform: scale(1.05);
-        }
-        
-        .rsvp {
-            background: white;
-            border-radius: 20px;
-            padding: 50px 40px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #444;
-        }
+        .rsvp { background: white; border-radius: 20px; padding: 50px 40px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
         
         input, textarea {
             width: 100%;
-            padding: 14px 18px;
+            padding: 14px;
             border: 2px solid #e0d4c0;
             border-radius: 12px;
-            font-size: 1.05rem;
-            outline: none;
-            transition: border 0.3s;
-        }
-        
-        input:focus, textarea:focus {
-            border-color: var(--gold);
+            margin-top: 8px;
         }
         
         button {
@@ -188,37 +151,30 @@
             border-radius: 50px;
             font-size: 1.2rem;
             font-weight: bold;
+            margin-top: 20px;
             cursor: pointer;
-            transition: all 0.3s;
         }
         
-        button:hover {
-            background: #20b958;
-            transform: translateY(-3px);
-        }
-        
-        .footer {
+        .quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
             text-align: center;
-            padding: 40px 20px;
-            color: #666;
-            font-size: 0.95rem;
-        }
-        
-        .ornament {
-            text-align: center;
-            color: var(--gold);
-            font-size: 2.5rem;
-            margin: 30px 0;
+            padding: 50px 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            max-width: 800px;
+            margin: 40px auto;
         }
     </style>
 </head>
 <body>
+
     <!-- COVER -->
     <header class="header">
         <div class="header-content">
             <h1>Ռոզի, Տեոնա և Արտյոմ</h1>
-            <p class="subtitle">Սուրբ Մկրտություն</p>
-            <p style="font-size: 1.35rem; margin-bottom: 40px;">17.07.2026</p>
+            <p style="font-size: 1.5rem;">Սուրբ Մկրտություն</p>
             <a href="#invitation" class="open-invitation">ԲԱՑԵԼ ՀՐԱՎԵՐԸ 🤍</a>
         </div>
     </header>
@@ -231,86 +187,91 @@
         </div>
     </div>
 
-    <!-- MAIN INVITATION -->
-    <div id="invitation" class="section" style="padding-top: 20px;">
+    <!-- INVITATION START -->
+    <div id="invitation" class="section">
         <h2 class="title">Սիրով հրավիրում ենք</h2>
+        
+        <!-- JULY 2026 CALENDAR -->
+        <div class="calendar">
+            <h3>Հուլիս 2026</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Երկ</th><th>Երք</th><th>Չոր</th><th>Հնգ</th><th>Ուրբ</th><th>Շաբ</th><th>Կիր</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+                    </tr>
+                    <tr>
+                        <td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td>
+                    </tr>
+                    <tr>
+                        <td>13</td><td>14</td><td>15</td><td>16</td>
+                        <td class="highlight">17</td>
+                        <td>18</td><td>19</td>
+                    </tr>
+                    <tr>
+                        <td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td>
+                    </tr>
+                    <tr>
+                        <td>27</td><td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
         <div class="card">
-            <h2 style="font-size: 2.1rem; margin-bottom: 20px; color: #222;">Ռոզիի, Տեոնայի և Արտյոմի<br>Սուրբ Մկրտությանը</h2>
-            <p style="font-size: 1.4rem; color: #555;">17 հուլիսի, 2026 թ.</p>
+            <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Ռոզիի, Տեոնայի և Արտյոմի<br>Սուրբ Մկրտություն</h2>
+            <p style="font-size: 1.6rem; color: #e91e63; font-weight: bold;">17.07.2026 ❤️</p>
         </div>
     </div>
 
     <!-- CHURCH -->
     <div class="section">
         <div class="card">
-            <h3 style="font-size: 1.6rem; margin-bottom: 10px;">⛪ Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)</h3>
-            <div class="event-time">14:00</div>
-            <p style="margin: 20px 0; font-size: 1.1rem;">Մկրտության արարողությունը կկայանա ժամը 14:00-ին։</p>
-            <a href="https://www.google.com/maps/place/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C+%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE+%D0%98%D0%BE%D0%B0%D0%BD%D0%BD%D0%B0+%D0%9A%D1%80%D0%B5%D1%81%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8F/@40.2758969,44.6314737,17z/data=!3m1!4b1!4m6!3m5!1s0x406aa1cd852829d9:0xd8c583e01d008291!8m2!3d40.2758969!4d44.6314737!16s%2Fg%2F11cjkmr2w1?entry=ttu" 
-               target="_blank" 
-               class="map-btn">📍 ԲԱՑԵԼ ՔԱՐՏԵԶԸ</a>
+            <h3 style="font-size: 1.6rem;">⛪ Սուրբ Հովհաննես Մկրտիչ եկեղեցի (Աբովյան)</h3>
+            <p style="font-size: 1.8rem; margin: 15px 0; color: var(--gold);">14:00</p>
+            <a href="https://www.google.com/maps/place/%D0%A6%D0%B5%D1%80%D0%BA%D0%BE%D0%B2%D1%8C+%D0%A1%D0%B2%D1%8F%D1%82%D0%BE%D0%B3%D0%BE+%D0%98%D0%BE%D0%B0%D0%BD%D0%BD%D0%B0+%D0%9A%D1%80%D0%B5%D1%81%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8F/@40.2758969,44.6314737,17z" 
+               target="_blank" class="map-btn">📍 ԲԱՑԵԼ ՔԱՐՏԵԶԸ</a>
         </div>
     </div>
 
     <!-- RESTAURANT -->
     <div class="section">
         <div class="card">
-            <h3 style="font-size: 1.6rem; margin-bottom: 10px;">🍽️ Bergamo Restaurant</h3>
-            <div class="event-time">17:00 — 17:30</div>
-            <p style="margin: 20px 0; font-size: 1.1rem;">Հյուրերին սպասում ենք ռեստորանում ժամը 17:00-ին։</p>
-            <a href="https://www.google.com/maps/place/Bergamo+Restaurant/data=!4m2!3m1!1s0x0:0xd924f9cadb04fa28?sa=X&ved=1t:2428&ictx=111" 
-               target="_blank" 
-               class="map-btn">📍 ԲԱՑԵԼ ՔԱՐՏԵԶԸ</a>
+            <h3 style="font-size: 1.6rem;">🍽️ Bergamo Restaurant</h3>
+            <p style="font-size: 1.8rem; margin: 15px 0; color: var(--gold);">17:00 — 17:30</p>
+            <a href="https://www.google.com/maps/place/Bergamo+Restaurant" 
+               target="_blank" class="map-btn">📍 ԲԱՑԵԼ ՔԱՐՏԵԶԸ</a>
         </div>
     </div>
 
     <!-- RSVP -->
     <div class="section">
         <div class="rsvp">
-            <h2 class="title" style="margin-bottom: 30px;">Հաստատեք Ձեր մասնակցությունը</h2>
+            <h2 class="title">Հաստատեք Ձեր մասնակցությունը</h2>
             <form id="rsvpForm">
-                <div class="form-group">
-                    <label>Անուն Ազգանուն</label>
-                    <input type="text" id="name" placeholder="Ձեր անունը և ազգանունը" required>
-                </div>
-                <div class="form-group">
-                    <label>Մարդկանց քանակը</label>
-                    <input type="number" id="count" value="1" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label>Լրացուցիչ նշումներ (ցանկության դեպքում)</label>
-                    <textarea id="note" rows="3" placeholder="Օրինակ՝ երեխաներով եմ գալիս..."></textarea>
-                </div>
+                <input type="text" id="name" placeholder="Անուն Ազգանուն" required><br><br>
+                <input type="number" id="count" value="1" min="1" placeholder="Մարդկանց քանակը" required><br><br>
+                <textarea id="note" rows="3" placeholder="Լրացուցիչ նշումներ..."></textarea>
                 <button type="submit">📲 ՈւՂԱՐԿԵԼ WHATSAPP-ՈՎ</button>
             </form>
         </div>
     </div>
 
-    <div class="footer">
-        <p>Շնորհակալություն, որ կիսում եք այս ուրախ օրը մեզ հետ 🤍</p>
-        <p style="margin-top: 15px; font-size: 0.9rem;">17.07.2026</p>
-    </div>
-
     <script>
         document.getElementById('rsvpForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
             const name = document.getElementById('name').value.trim();
             const count = document.getElementById('count').value;
             const note = document.getElementById('note').value.trim();
             
-            let message = `Շնորհավորում եմ! 🌟%0A%0A`;
-            message += `Անունը՝ ${name}%0A`;
-            message += `Մարդկանց քանակը՝ ${count}%0A`;
+            let msg = `Շնորհավորում եմ! 🌟%0A%0AԱնունը՝ ${name}%0AՔանակը՝ ${count}`;
+            if (note) msg += `%0AՆշում՝ ${note}`;
             
-            if (note) {
-                message += `Նշում՝ ${note}%0A`;
-            }
-            
-            message += `%0AՀրավերը ստացել եմ։`;
-            
-            const whatsappUrl = `https://wa.me/37443000202?text=${message}`;
-            window.open(whatsappUrl, '_blank');
+            window.open(`https://wa.me/37443000202?text=${msg}`, '_blank');
         });
     </script>
 </body>
